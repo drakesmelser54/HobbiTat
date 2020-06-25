@@ -1,25 +1,46 @@
-# Savvy Coders Project Boilerplate Starter Kit
+# Drake's Capstone Project
 
-## Overview
+## Project name:
+_HobbiTat_
 
-This template repository contains several opinionated, 'starter' files and settings to help Savvy Coder students focus more time and energy on learning how to code and/or craft 'business logic' for projects and less time on configurations.
 
-In addition to a '.gitignore' and some VS Code specific extensions and settings, it includes the 'recommended' settings for:
+## Description:
+This is my capstone project for the June 2020 Savvy Coders Fullstack Bootcamp. _HobbiTat_ is
+a web app with mobile functionality that allows hobbyists to create profiles that showcase their skills, hobbies, and teachings and connect and exchange them with other members of their community.
 
-1. [ESLint](eslint.org)
-2. [Stylelint](stylelint.io)
-3. [Prettier](prettier.io)
 
-## Get Started
 
-**First and foremost,** make sure that your local machine is set up with all of the 'dev environment tooling' as per [this guide...](https://www.notion.so/codefinity/Setting-up-a-Local-Dev-Environment-97de62a546f943fbbc7a246b4785a343)
+## Table of Contents:
+This README contains the following information
+- Installation
+- Usage
+- Contributions
+- Credits
+- Licensing
 
-Well, after establishing your directory structure on your local machine, (e.g. '~/Code/SavvyCoders'), kindly [follow these girections](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) - essentially, there should be a button 👆🏾that says **Use this template.**
 
-Once this repo has been created on your GitHub, you can click on the button to 'clone' it as usual. Once it's `clone`d to your local machine, kindly `cd` into the directory and **be sure to do:** `npm i` to get all of the goodies. If you see any _errors_ (warnings are 🙆🏾‍♂️) on Windows, you may have to do `npm install`.
+## Installation:
+This SPA will be housed on Heroku initially and will be functional on computer web browsers and mobile devices. After the Savvy Coders Full Stack Bootcamp, _HobbiTat_ will continue to be updated and may eventually be registered under a domain and be functional on IOS.
 
-Now, enter `code .` to open this project in VS Code, and look for a prompt to 'install some extensions' once inside VS Code (in the bottom right of your screen). You should install these. 👍🏾
+## Usage:
+After opening _HobbiTat_, users create profiles after inputting some information, including: location, skills/hobies/teachings they possess, and photos and links to relevant work. After profiles are created, users may view profiles within their area in a slideshow, similar to the swiping process in dating apps like _Bumble_ and _Tinder_.
 
-Update this README and make any other initial changes or 🌱 files, etc. Go ahead and do your usual `git` steps, etc. etc. etc.
+If the user wants to chat with another user who's skills spark interest, they may start a dialogue through chat functionality. If the chat leads to an agreed upon Skill Exchange, the two users may book dates in their calender for the exchange.
 
-**Note:** This is a template repository, no need to 'fork it.
+
+## Contributing:
+Instructions on how to contribute to this project will be shared as they become available.
+
+
+## Credits:
+Credit is given to my fantastic TA in this Cohort, Vanessa Kratohvil. As well as the countless other instructors who made the knowledge and creativity backing this project possible. In addition, special thanks goes out to my peers in the June 2020 cohort at Savvy Coders.
+
+
+### MIT License
+Copyright (c) 2020 Drake M. Smelser
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
