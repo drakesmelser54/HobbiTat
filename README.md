@@ -12,12 +12,19 @@ a web app with mobile functionality that allows hobbyists to create profiles tha
 
 ## Table of Contents:
 This README contains the following information
+- Documents
+- Trello
 - Installation
 - Usage
 - Contributions
 - Credits
 - Licensing
 
+## Documents
+[Link](https://github.com/drakesmelser54/HobbiTat/tree/master/DOCS) to folder containing wireframes, elevator speech, and graphic organizers.
+
+## Trello
+[Link](https://trello.com/b/tVQ7Afir/capstone) to personal Trello Board for this project.
 
 ## Installation:
 This SPA will be housed on Heroku initially and will be functional on computer web browsers and mobile devices. After the Savvy Coders Full Stack Bootcamp, _HobbiTat_ will continue to be updated and may eventually be registered under a domain and be functional on IOS.
