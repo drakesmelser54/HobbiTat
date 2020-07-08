@@ -5,8 +5,7 @@ _HobbiTat_
 
 
 ## Description:
-This is my capstone project for the June 2020 Savvy Coders Fullstack Bootcamp. _HobbiTat_ is
-a web app with mobile functionality that allows hobbyists to create profiles that showcase their skills, hobbies, and teachings and connect and exchange them with other members of their community.
+This is my capstone project for the June 2020 Savvy Coders Fullstack Bootcamp. _HobbiTat_ is a moneyless marketplace web app with mobile functionality that allows hobbyists to create profiles that showcase their skills and hobbies, and exchange them with other members of their community.
 
 
 
@@ -30,9 +29,9 @@ This README contains the following information
 This SPA will be housed on Heroku initially and will be functional on computer web browsers and mobile devices. After the Savvy Coders Full Stack Bootcamp, _HobbiTat_ will continue to be updated and may eventually be registered under a domain and be functional on IOS.
 
 ## Usage:
-After opening _HobbiTat_, users create profiles after inputting some information, including: location, skills/hobbies/teachings they possess, and photos and links to relevant work. After profiles are created, users may view profiles within their area in a slideshow, similar to the swiping process in dating apps like _Bumble_ and _Tinder_.
+After opening _HobbiTat_, users create profiles after inputting some information, including: location, hobbies and skills they possess, and photos and links to relevant work. After profiles are created, users may view profiles within their area in a slideshow, similar to the swiping process in dating apps like _Bumble_ and _Tinder_.
 
-If the user wants to chat with another user whose skills spark interest, they may start a dialogue through chat functionality. If the chat leads to an agreed upon Skill Exchange, the two users may book dates in their calender for the exchange.
+If the user wants to chat with another user whose skills spark interest, they may start a dialogue through chat functionality. If the chat leads to an agreed upon "Exchange", the two users may book dates in their calender for the "Exchange".
 
 
 ## Contributing:
