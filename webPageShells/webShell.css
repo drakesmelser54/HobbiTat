@@ -1,5 +1,5 @@
 body {
-  background-color: #E48577;
+  background-color: #ACD2D8CC;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -7,7 +7,7 @@ body {
 
 .nav-bar {
   width: 100%;
-  height: 12vh;
+  height: 8vh;
   background-color: white;
   margin: 0;
   padding: 0;
@@ -15,19 +15,19 @@ body {
 }
 
 .hero-image {
-  background-image: url(/heroimage.jpg);
-
-  height: 600px;
+  background-image: url("https://github.com/drakesmelser54/HobbiTat/raw/master/Images/HobbiTat%20Hero%20Image.png");
+  height: 720px;
   width: 100%;
+  margin-top: 1%;
 }
 
 .welcome-container {
   height: 30vh;
   width: 70vh;
-  background-color: white;
+  background-color: 	#FFFFFFCC;
   position: absolute;
-  top: 35%;
-  left: 30%;
+  top: 45%;
+  left: 32%;
 }
 
 .welcome-content {
