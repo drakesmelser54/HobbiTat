@@ -1,5 +1,5 @@
 body {
-  background-color: #80b3b6;
+  background-color: #80b3b6 ;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -84,16 +84,18 @@ p {
 }
 
 /*Log-In Box*/
-.loginBox {
-  height: 30vh;
-  width: 60vh;
-  background-color: #E8b1a6;
+.loginContainer {
+  height: 496px;
+  width: 700px;
   position: absolute;
-  top: 35%;
-  left: 34%;
+  left: 23%;
+  top: 20%;
+  background-image: url("https://github.com/drakesmelser54/HobbiTat/blob/master/Images/photographer.png?raw=true");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.loginBoxContent {
-  text-align: left;
-  padding: 5% 10%;
+.loginBox {
+  margin-top: 15%;
+  padding: 2%;
 }
