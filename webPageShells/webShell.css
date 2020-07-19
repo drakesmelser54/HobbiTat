@@ -13,60 +13,49 @@ p {
 /*nav*/
 .nav-bar {
   width: 100%;
-  height: 8vh;
+  height: 10vh;
   background-color: #ECE0D4;
-  margin: 0;
-  padding: 0;
+  border-bottom: 3px solid #869867;
   display: inline-flex;
   justify-content: space-between;
 }
-       /*buttons*/
+       /*nav buttons*/
 .fa-home {
-  padding-left: 20px;
-  padding-top: 1%;
+  padding-top: 8%;
+  padding-left: 2%;
+
 }
 
 .fa-bars {
-  padding-right: 20px;
-  padding-top: 1%;
+  padding-top: 8%;
+  padding-right: 2%;
 }
 
 /*home-page image*/
-.hero-image {
-  background-image: url("https://github.com/drakesmelser54/HobbiTat/raw/master/Images/hero-image.png");
-  height: 60vh;
-  width: 100%;
-  margin-top: 8%;
-}
-
 /*Middle Container*/
 .welcome-container {
-  height: 25vh;
-  width: 80vh;
-  background-color: 	#E8b1a699;
-  position: absolute;
-  top: 43%;
-  left: 29%;
-}
-
-.welcome-content {
+  height: 150px;
+  width: 70%;
+  border: 3px solid #869867;
+  border-radius: 5px;
+  background-color: 	#E8b1a6;
+  color: whitesmoke;
   text-align: center;
+  line-height: 1;
+  margin-top: 200px;
+  margin-left: 60px;
 }
 
-.welcome-content>h1 {
+.welcome-container>h1 {
   font-family: 'Raleway', Helvetica, sans-serif;
-  font-size: 45px;
-  margin-top: 3%;
-  margin-bottom: 0;
-  color:  #ECE0D4;
+  font-size: 30px;
+  margin-top: 10px;
 }
 
 .welcome-content>p {
   font-family: 'Noto Serif', Georgia, serif;
-  font-size: 20px;
-  margin-bottom: 0;
-  margin-top: 1%;
-  color:  whitesmoke;
+  font-size: 12px;
+
 }
   /*login/signup buttons*/
 .login-buttons {
@@ -83,19 +72,8 @@ p {
   margin-top: 3%;
 }
 
-/*Log-In Box*/
-.loginContainer {
-  height: 496px;
-  width: 700px;
-  position: absolute;
-  left: 23%;
-  top: 20%;
-  background-image: url("https://github.com/drakesmelser54/HobbiTat/blob/master/Images/photographer.png?raw=true");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+/*Log-In Page*/
 
-.loginBox {
-  margin-top: 15%;
-  padding: 2%;
+/*Log-In Container*/
+.loginContainer {
 }
