@@ -55,6 +55,7 @@ p {
 .welcome-content>p {
   font-family: 'Noto Serif', Georgia, serif;
   font-size: 12px;
+  margin-bottom: 3%;
 
 }
   /*login/signup buttons*/
@@ -69,11 +70,28 @@ p {
   border: 2px solid whitesmoke;
   border-radius: 5px;
   padding: 2px 5px;
-  margin-top: 3%;
+  margin: 0;
+  
 }
 
-/*Log-In Page*/
 
+/*Log-In Page*/
 /*Log-In Container*/
 .loginContainer {
+  height: 200px;
+  width: 300px;
+  background-color:#E8b1a6;
+  border: 3px solid #869867;
+  border-radius: 5px;
+  color: whitesmoke;
+  margin-top: 150px;
+  margin-left: 50px;
+  text-align: left;
+  padding-left: 10px;
+  line-height: 2;
+}
+
+.bottomLoginContainer {
+  text-align: center;
+  line-height: 1;
 }
