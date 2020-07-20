@@ -11,6 +11,10 @@ p {
   font-family: 'Noto Serif', Georgia, serif;
 }
 
+h1, h2 {
+  font-family: 'Raleway', Helvetica, sans-serif;
+}
+
 /*nav*/
 .nav-bar {
   width: 100%;
@@ -76,7 +80,6 @@ p {
 
 
 /*Log-In Page*/
-/*Log-In Container*/
 .loginContainer {
   height: 200px;
   width: 300px;
@@ -94,4 +97,51 @@ p {
 .bottomLoginContainer {
   text-align: center;
   line-height: 1;
+}
+
+
+/*Signup Page*/
+.signupContainer {
+  height: 250px;
+  width: 300px;
+  background-color:#F2F3F2;
+  border: 3px solid black;
+  border-radius: 5px;
+  color: black;
+  margin-top: 150px;
+  margin-left: 50px;
+  text-align: left;
+  padding-left: 10px;
+  line-height: 2;
+}
+
+/*createProfilePage*/
+.upperProfile {
+  height: 190px;
+  width: 100%;
+  justify-content: center;
+  background: linear-gradient(to right, #F2b54a 0%, #FFC602 100%);
+}
+
+#profilePhotoContainer {
+  height: 180px;
+  width: 180px;
+  background-color: black;
+  border-radius: 5px 20px 5px;
+  margin: 10px auto;
+}
+
+.lowerProfile {
+  display: inline-flex;
+}
+.leftProfileContainer {
+  height: 500px;
+  width: 175px;
+  background-color: #F2C9A0;
+}
+
+.rightProfileContainer {
+  height: 500px;
+  width: 239px;
+  background-color: #F2F3F2;
 }
