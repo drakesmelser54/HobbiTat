@@ -1,6 +1,5 @@
 body {
-  background: linear-gradient(to right, #F2b54a 0%, #FFC602 100%);
-  
+  background: linear-gradient(to right, #869867 0%, #80B3B6 100%);
   width: 100%;
   height: 100%;
   margin: 0;
@@ -19,7 +18,8 @@ h1, h2 {
 .nav-bar {
   width: 100%;
   height: 10vh;
-  background-color: black;
+  background-color: #ECE0D4;
+  border-bottom: 3px solid black;
   display: inline-flex;
   justify-content: space-between;
   margin-right: 0;
@@ -35,14 +35,14 @@ h1, h2 {
   padding-right: 2%;
 }
 
-/*home-page image*/
+/*Home Page*/
 /*Middle Container*/
 .welcome-container {
   height: 150px;
   width: 70%;
   border: 3px solid black;
   border-radius: 5px;
-  background-color:#F2F3F2;
+  background-color:#E8B1A6;
   color: black;
   text-align: center;
   line-height: 1;
@@ -83,7 +83,7 @@ h1, h2 {
 .loginContainer {
   height: 200px;
   width: 300px;
-  background-color:#F2F3F2;
+  background-color:#E8B1A6;
   border: 3px solid black;
   border-radius: 5px;
   color: black;
@@ -104,7 +104,7 @@ h1, h2 {
 .signupContainer {
   height: 250px;
   width: 300px;
-  background-color:#F2F3F2;
+  background-color:#E8B1A6;
   border: 3px solid black;
   border-radius: 5px;
   color: black;
@@ -115,33 +115,51 @@ h1, h2 {
   line-height: 2;
 }
 
-/*createProfilePage*/
-.upperProfile {
-  height: 190px;
+/*ProfilePage*/
+.profilePictureContainer {
+  height: 300px;
   width: 100%;
-  justify-content: center;
-  background: linear-gradient(to right, #F2b54a 0%, #FFC602 100%);
+  background-color: silver;
 }
 
-#profilePhotoContainer {
-  height: 180px;
-  width: 180px;
-  background-color: black;
-  border-radius: 5px 20px 5px;
-  margin: 10px auto;
+.profilePic {
+  max-width: 100%;
+  background-size: cover;
+  display: block;
 }
 
-.lowerProfile {
+.profileHeaders {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  margin-right: 20px;
+}
+.lowerProfileContainer{
   display: inline-flex;
+  height: 500px;
+  width: 100%;
+  font-size: smaller;
 }
 .leftProfileContainer {
-  height: 500px;
-  width: 175px;
-  background-color: #F2C9A0;
+  width: 125px;
+  background-color: #B6BC84;
+  padding-left: 10px;
 }
 
 .rightProfileContainer {
-  height: 500px;
   width: 239px;
-  background-color: #F2F3F2;
+  display: flexbox;
+  background-color: #80B3B6;
+  padding-left: 15px;
+  padding-right: 10px;
+}
+
+/*createProfilePage*/
+.addProfilePictureContainer {
+  background-color: silver;
+  display: flex;
+  height: 300px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
