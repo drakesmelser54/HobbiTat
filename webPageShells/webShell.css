@@ -203,5 +203,21 @@ h1, h2 {
   width: 80%;
   border: 2px solid black;
   border-radius: 20px;
+}
 
+/*viewing HobbiTat Page*/
+.otherUserLowerProfileContainer {
+    display: inline-flex;
+    height: 35vh;
+    width: 100%;
+    font-size: smaller;
+}
+.nextOrExchangeContainer {
+  display: inline-flex;
+  background-color: #ECE0D4;
+  height: 15vh;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  border-top: 3px solid black;
 }
