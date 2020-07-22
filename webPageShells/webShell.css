@@ -117,7 +117,7 @@ h1, h2 {
 
 /*ProfilePage*/
 .profilePictureContainer {
-  height: 300px;
+  height: 40vh;
   width: 100%;
   background-color: silver;
 }
@@ -132,25 +132,27 @@ h1, h2 {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid black;
-  margin-right: 20px;
 }
+
 .lowerProfileContainer{
   display: inline-flex;
-  height: 500px;
+  height: 50vh;
   width: 100%;
   font-size: smaller;
 }
+
 .leftProfileContainer {
   width: 125px;
   background-color: #B6BC84;
   padding-left: 10px;
+  padding-right: 10px;
 }
 
 .rightProfileContainer {
-  width: 239px;
+  width: 250px;
   display: flexbox;
   background-color: #80B3B6;
-  padding-left: 15px;
+  padding-left: 10px;
   padding-right: 10px;
 }
 
@@ -162,4 +164,44 @@ h1, h2 {
   width: 100%;
   align-items: center;
   justify-content: center;
+}
+
+/*chatRoomPage*/
+.upperChatRoom {
+  height: 75vh;
+  width: 100%;
+}
+
+.upperLeftChatRoom {
+  width: 40%;
+  padding-left: 10px;
+}
+
+.upperRightChatRoom {
+  width: 40%;
+  text-align: right;
+  padding-right: 10px;
+  float: right;
+}
+
+.lowerChatRoom {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #E8B1A6;
+  justify-content: space-evenly;
+}
+
+.userChatText {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: smaller;
+  padding-left: 10px;
+  height: 40px;
+  width: 80%;
+  border: 2px solid black;
+  border-radius: 20px;
+
 }
