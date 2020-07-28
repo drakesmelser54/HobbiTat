@@ -25,8 +25,15 @@ h1, h2, a {
   display: inline-flex;
   justify-content: space-between;
   align-items: flex-end;
+  box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
 
 }
+.hobbiest {
+  height: 8vh;
+  width: auto;
+  position: relative;
+}
+
        /*nav buttons*/
 .nav-btns{
   background-color: #3d4452;
@@ -46,8 +53,8 @@ h1, h2, a {
 /*dropdown content, hidden by default*/
 .dropdown-content {
   display: none;
+  position: absolute;
   text-align: left;
-  padding-right: 30vh;
   background-color: #d4d9d3;
   border-top: 3px solid black;
   width: 100%;
@@ -71,14 +78,13 @@ h1, h2, a {
 .welcome-container {
   height: 20vh;
   width: 70vw;
-
   background-color:#E48577;
   color: white;
   text-align: center;
   line-height: 1;
   margin-top: 30vh;
   margin-left: 15vw;
-
+  box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
 }
 
   /*login/signup buttons*/
@@ -102,6 +108,7 @@ h1, h2, a {
   height: 25vh;
   width: 70vw;
   background-color:#E48577;
+  box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
   color: white;
   margin-top: 25vh;
   margin-left: 14vw;
@@ -121,6 +128,7 @@ h1, h2, a {
   height: 35vh;
   width: 70vw;
   background-color:#E48577;
+  box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
   color: white;
   margin-top: 25vh;
   margin-left: 13vw;
