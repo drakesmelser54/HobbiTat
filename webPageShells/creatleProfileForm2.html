@@ -22,14 +22,12 @@
       <button type="button" class="nav-btns"><i class="fa fa-home" style="font-size: 28px; color: white"></i></button>
     </nav>
     <main>
-      <form action="url" method="post" class="create-profile-forms">
-        <label for="name">What's your name?</label>
-        <input type="text" id="name" name="user" placeholder="Name">
-        <label for="userLocation">Where are you from?</label>
-        <input type="text" id="userLocation" name="user_location" placeholder="City/Town">
-        <label for="userPic">Add a profile picture</label>
-        <input id="userPic" name="user_pic" type="file" accept="image/png, image/jpeg">
-        <button type="submit">Finish Creating Profile</button>
+      <form action="url" method="post" class="create-profile-forms  ">
+        <label for="userHobbies">What hobbies can you share?</label>
+        <textarea id="userHobbies" name="user_hobbies" max-length="100" placeholder="Hobbies go here!"></textarea>
+        <label for="userLinks">Share some links to your work!</label>
+        <textarea id="userLinks" name="user_links" max-length="100" placeholder="Links to your hobbies go here!"></textarea>
+        <button type="submit">Create Profile</button>
        </form>
     </main>
       <script src="shells.js"></script>
