@@ -14,15 +14,19 @@
       <i class="fa fa-home" style="font-size: 36px; color: white"></i>
       <i class="fa fa-bars" style="font-size: 36px; color: white"></i>
     </nav>
-    <div class="signupContainer">
-        <p>username:</p>
-        <p>password:</p>
-        <p>confirm password</p>
-        <div class="bottomLoginContainer">
-          <i class="fas fa-sign-in-alt" style="font-size: 28px; color: white"></i>
-          <p>Already have an account?</p>
-        </div>
-    </div>
+    <main>
+      <div class="login-signup-containers">
+        <h2>Sign-Up</h2>
+        <form action="/url" method="post">
+          <input type="text" id="username" placeholder="Username">
+          <input type="password" id="password" placeholder="Password">
+          <input type="password" id="password" placeholder="Confirm Password">
+          <button type="submit">Login</button>
+        </form>
+        <p>Already have an account?</p>
+      </div>
+    </main>
+    <script src="shell.js"></script>
     <script src="https://kit.fontawesome.com/00850ddae6.js" crossorigin="anonymous"></script>
   </body>
 </html>
