@@ -26,7 +26,7 @@ h1, h2, a {
 
 }
 .hobbySketches > img {
-  height: 8vh;
+  height: 6vh;
   width: auto;
 }
 
@@ -90,7 +90,7 @@ h1, h2, a {
   justify-content: space-around;
 
 }
-
+/*homepage button styling*/
 #login-button {
   font-family: 'Raleway', Helvetica, sans-serif;
   background-color: #046307;
@@ -114,7 +114,8 @@ h1, h2, a {
   cursor: pointer;
   width: 30%;
 }
-/*Log-In and SignUp Pages*/
+
+/*Login and Signup Pages*/
 .login-signup-containers {
   height: 50vh;
   width: 70vw;
@@ -129,13 +130,13 @@ h1, h2, a {
   margin-left: 15vw;
 }
 
+/*Login and Signup Forms*/
 .login-signup-containers > form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/*Forms*/
 /*Form-inputs*/
 input[type=text], select {
   padding: 1vh 1vw;
@@ -173,7 +174,6 @@ input[type=file], select {
   font-family: 'Raleway', Helvetica, sans-serif;
 }
 
-
 /*Form-text areas*/
 textarea, select {
   padding: 2vh 2vw;
@@ -185,25 +185,24 @@ textarea, select {
   border-radius: 4px;
   box-sizing: border-box;
   font-family: 'Noto Serif', Georgia, serif;
-
 }
 
 /*Form Containers*/
 .create-profile-forms {
-  height: 85vh;
+  height: 88vh;
   width: 85vw;
-  margin-top: 2vh; 
+  margin-top: 1vh; 
   margin-left: 7vw;
   font-family: 'Raleway', Helvetica, sans-serif;
   font-size: large;
   background-color: #E48577;
+  box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   justify-content: space-around;
-  
 }
 
 .create-profile-forms > h2 {
@@ -214,7 +213,7 @@ textarea, select {
 
 /*ProfilePage*/
 .profilePictureContainer {
-  height: 40vh;
+  height: 50vh;
   width: 100%;
   background-color: #D4D9D3;
 }
@@ -225,12 +224,6 @@ textarea, select {
   display: block;
 }
 
-.profileHeaders {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid black;
-}
-
 .lowerProfileContainer{
   display: inline-flex;
   height: 50vh;
@@ -239,20 +232,28 @@ textarea, select {
 }
 
 .leftProfileContainer {
-  width: 40vw;
+  width: 30vw;
   background-color: #E48577;
+  border-bottom: 1px solid black;
+  color: white;
   padding-left: 3vw;
-  padding-right: 3vw;
+  padding-right: 5vw;
+}
+
+.leftProfileContainer > h2 {
+  border-bottom: 1px solid white;
 }
 
 .rightProfileContainer {
   width: 60vw;
   display: flexbox;
-  background-color: #78b6c0;
+  background-color: #d4d9d3;
   padding-left: 3vw;
   padding-right: 3vw;
 }
-
+.rightProfileContainer > h2 {
+  border-bottom: 1px solid black;
+}
 /*createProfilePage*/
 .addProfilePictureContainer {
   background-color: silver;
