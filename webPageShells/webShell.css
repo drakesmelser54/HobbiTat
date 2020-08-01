@@ -215,7 +215,7 @@ textarea, select {
 .profilePictureContainer {
   height: 50vh;
   width: 100%;
-  background-color: #D4D9D3;
+  background: linear-gradient(to right, #e0eef0 0%,#78b6c0 100%);
 }
 
 .profilePic {
@@ -234,7 +234,6 @@ textarea, select {
 .leftProfileContainer {
   width: 30vw;
   background-color: #E48577;
-  border-bottom: 1px solid black;
   color: white;
   padding-left: 3vw;
   padding-right: 5vw;
@@ -247,7 +246,7 @@ textarea, select {
 .rightProfileContainer {
   width: 60vw;
   display: flexbox;
-  background-color: #d4d9d3;
+  background-color: #e0eef0;
   padding-left: 3vw;
   padding-right: 3vw;
 }
@@ -312,10 +311,13 @@ textarea, select {
 }
 .nextOrExchangeContainer {
   display: inline-flex;
-  background-color: #ECE0D4;
-  height: 15vh;
-  width: 100%;
+  position: absolute;
+  z-index: 9;
+  top: 90vh;
+  margin: 0;
+  padding-left: 8vw;
+  width: 80%;
   align-items: center;
-  justify-content: space-around;
-  border-top: 3px solid black;
+  justify-content: space-between;
+  
 }
