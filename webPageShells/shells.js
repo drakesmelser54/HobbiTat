@@ -4,6 +4,7 @@ document.getElementById("hamburger-btn").addEventListener("click", function() {
 });
 
 /*Array of Artist Sketches*/
+/*will eventually have three sketches here, artist is finishing them up*/
 const artistSketches = [
   {
     url:
