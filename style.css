@@ -1,0 +1,322 @@
+body {
+  background: linear-gradient(to right, #e0eef0 0%,#78b6c0 100%);
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/*Fonts*/
+p, {
+  font-family: 'Noto Serif', Georgia, serif;
+}
+
+h1, h2, a {
+  font-family: 'Raleway', Helvetica, sans-serif;
+}
+
+/*nav*/
+.nav-bar {
+  width: 100%;
+  height: 10vh;
+  background-color: #3d4452;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
+
+}
+.hobbySketches > img {
+  height: 6vh;
+  width: auto;
+}
+
+/*nav buttons*/
+.nav-btns {
+  background-color: #3d4452;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-btns:hover, .nav-btns:focus {
+  background-color: #E48577;
+}
+
+/*container to position dropdown content*/
+.dropdown {
+  display: inline-block;
+  text-align: end;
+}
+/*dropdown content, hidden by default*/
+.dropdown-content {
+  display: none;
+  position: absolute;
+  text-align: left;
+  background-color: #d4d9d3;
+  border-top: 3px solid black;
+  width: 100%;
+  height: 15vh;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content > a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid grey;
+  padding: 5px;
+  display: block;
+}
+
+.show {display: block;}
+
+/*Home Page*/
+/*Middle Container*/
+.welcome-container {
+  height: 25vh;
+  width: 70vw;
+  display: inline-block;
+  background-color:#E48577;
+  color: white;
+  text-align: center;
+  margin-top: 30vh;
+  margin-left: 15vw;
+  box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
+}
+
+  /*login/signup buttons*/
+  /*home page button container*/
+.homepage-buttons {
+  display: flex;
+  justify-content: space-around;
+
+}
+/*homepage button styling*/
+#login-button {
+  font-family: 'Raleway', Helvetica, sans-serif;
+  background-color: #046307;
+  border: none;
+  color: white;
+  padding: 1vh 2vw;
+  text-decoration: none;
+  margin: 0;
+  cursor: pointer;
+  width: 30%;
+}
+
+#signup-button {
+  font-family: 'Raleway', Helvetica, sans-serif;
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 1vh 2vw;
+  text-decoration: none;
+  margin: 0;
+  cursor: pointer;
+  width: 30%;
+}
+
+/*Login and Signup Pages*/
+.login-signup-containers {
+  height: 50vh;
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color:#E48577;
+  box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
+  color: white;
+  margin-top: 20vh;
+  margin-left: 15vw;
+}
+
+/*Login and Signup Forms*/
+.login-signup-containers > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Form-inputs*/
+input[type=text], select {
+  padding: 1vh 1vw;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: 'Noto Serif', Georgia, serif;
+}
+
+input[type=password], select {
+  padding: 1vh 1vw;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: 'Noto Serif', Georgia, serif;
+}
+
+button[type=submit], select {
+  font-family: 'Raleway', Helvetica, sans-serif;
+  background-color: #046307;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 90%;
+}
+
+input[type=file], select {
+  font-family: 'Raleway', Helvetica, sans-serif;
+}
+
+/*Form-text areas*/
+textarea, select {
+  padding: 2vh 2vw;
+  margin: 8px 0;
+  width: 80%;
+  height: 25%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: 'Noto Serif', Georgia, serif;
+}
+
+/*Form Containers*/
+.create-profile-forms {
+  height: 88vh;
+  width: 85vw;
+  margin-top: 1vh;
+  margin-left: 7vw;
+  font-family: 'Raleway', Helvetica, sans-serif;
+  font-size: large;
+  background-color: #E48577;
+  box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.create-profile-forms > h2 {
+  border-bottom: 1px white solid;
+  padding-bottom: 5vh;
+  margin: 5vh 5vw;
+}
+
+/*ProfilePage*/
+.profilePictureContainer {
+  height: 50vh;
+  width: 100%;
+  background: linear-gradient(to right, #e0eef0 0%,#78b6c0 100%);
+}
+
+.profilePic {
+  max-width: 100%;
+  background-size: cover;
+  display: block;
+}
+
+.lowerProfileContainer{
+  display: inline-flex;
+  height: 50vh;
+  width: 100%;
+  font-size: smaller;
+}
+
+.leftProfileContainer {
+  width: 30vw;
+  background-color: #E48577;
+  color: white;
+  padding-left: 3vw;
+  padding-right: 5vw;
+}
+
+.leftProfileContainer > h2 {
+  border-bottom: 1px solid white;
+}
+
+.rightProfileContainer {
+  width: 60vw;
+  display: flexbox;
+  background-color: #e0eef0;
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+.rightProfileContainer > h2 {
+  border-bottom: 1px solid black;
+}
+/*createProfilePage*/
+.addProfilePictureContainer {
+  background-color: silver;
+  display: flex;
+  height: 40vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+/*chatRoomPage*/
+.upperChatRoom {
+  height: 75vh;
+  width: 100%;
+}
+
+.upperLeftChatRoom {
+  width: 40%;
+  padding-left: 10px;
+}
+
+.upperRightChatRoom {
+  width: 40%;
+  text-align: right;
+  padding-right: 10px;
+  float: right;
+}
+
+.lowerChatRoom {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #E8B1A6;
+  justify-content: space-evenly;
+}
+
+.userChatText {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: smaller;
+  padding-left: 10px;
+  height: 40px;
+  width: 80%;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+/*viewing HobbiTat Page*/
+.otherUserLowerProfileContainer {
+  display: inline-flex;
+  height: 35vh;
+  width: 100%;
+  font-size: smaller;
+}
+.nextOrExchangeContainer {
+  display: inline-flex;
+  position: absolute;
+  z-index: 9;
+  top: 90vh;
+  margin: 0;
+  padding-left: 8vw;
+  width: 80%;
+  align-items: center;
+  justify-content: space-between;
+}

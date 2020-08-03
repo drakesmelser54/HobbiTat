@@ -191,7 +191,7 @@ textarea, select {
 .create-profile-forms {
   height: 88vh;
   width: 85vw;
-  margin-top: 1vh; 
+  margin-top: 1vh;
   margin-left: 7vw;
   font-family: 'Raleway', Helvetica, sans-serif;
   font-size: large;
@@ -319,5 +319,5 @@ textarea, select {
   width: 80%;
   align-items: center;
   justify-content: space-between;
-  
+
 }
