@@ -8,29 +8,38 @@ function render(st) {
   ${Nav(state.Links)}
   ${Main(st)}
   `;
+  homeButtonEventListener();
+  hamburgerDropdown();
+  hamburgerEventListeners();
 }
 
 render(state.Home);
 
-/*Toggle between hiding and showing hamburger drop down when clicked*/
-document.getElementById("hamburger-btn").addEventListener("click", function() {
-  document.getElementById("hamburger-dropdown").classList.toggle("show");
-});
+//hamburger button//
+function hamburgerEventListeners() {
+  document.querySelectorAll(".dropdown-content a").forEach(link =>
+    link.addEventListener("click", event => {
+      event.preventDefault();
+      let linkText = event.target.textContent;
+      let pieceOfState = state[linkText];
+      render(pieceOfState);
+    })
+  );
+}
 
-/*Array of Artist Sketches*/
-/*will eventually have three sketches here, artist is finishing them up*/
-const artistSketches = [
-  {
-    url:
-      "https://raw.githubusercontent.com/drakesmelser54/HobbiTat/master/Artist%20Sketches/artist%20white.png",
-    title: "chef sketch"
-  }
-];
-/*Populate artist sketches for nav bar*/
-const navBarSketches = document.querySelector(".hobbySketches");
-artistSketches.forEach(pic => {
-  let img = document.createElement("img");
-  img.src = pic.url;
-  img.alt = pic.title;
-  navBarSketches.appendChild(img);
-});
+//home button//
+function homeButtonEventListener() {
+  document.querySelector("#home").addEventListener("click", event => {
+    event.preventDefault();
+    render(state.Home);
+  });
+}
+
+/*Toggle between hiding and showing hamburger drop down when clicked*/
+function hamburgerDropdown() {
+  document
+    .getElementById("hamburger-btn")
+    .addEventListener("click", function() {
+      document.getElementById("hamburger-dropdown").classList.toggle("show");
+    });
+}

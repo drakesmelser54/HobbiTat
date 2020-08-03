@@ -6,7 +6,7 @@ export default links => `
       ${links.map(link => `<a href="#">${link}</a>`).join("")}
     </div>
   </div>
-  <div class="hobbySketches"></div>
-  <button type="button" class="nav-btns"><i class="fa fa-home" style="font-size: 28px; color: white"></i></button>
+  <div class="hobbySketches"><img src="https://raw.githubusercontent.com/drakesmelser54/HobbiTat/master/Artist%20Sketches/artist%20white.png" alt="chef sketch"></div>
+  <button type="button" class="nav-btns" id="home"><i class="fa fa-home" style="font-size: 28px; color: white"></i></button>
 </nav>
 `;
