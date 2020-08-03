@@ -70,17 +70,26 @@ h1, h2, a {
 .show {display: block;}
 
 /*Home Page*/
+.home-page {
+  background-image: url("https://raw.githubusercontent.com/drakesmelser54/HobbiTat/master/Images/oceanPhoto.png");
+  background-size: cover;
+  height: 110vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /*Middle Container*/
 .welcome-container {
-  height: 25vh;
-  width: 70vw;
+  height: 20vh;
+  width: 30vw;
+
   display: inline-block;
   background-color:#E48577;
   color: white;
   text-align: center;
-  margin-top: 30vh;
-  margin-left: 15vw;
-  box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
+  box-shadow: 0 5px 2px -2px rgba(0,0,0,.5);
+  z-index: 9;
 }
 
   /*login/signup buttons*/

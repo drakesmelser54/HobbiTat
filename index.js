@@ -8,13 +8,16 @@ function render(st) {
   ${Nav(state.Links)}
   ${Main(st)}
   `;
+  eventListenerBundler();
+}
+render(state.Home);
+
+//bundle event listeners for render fxn//
+function eventListenerBundler() {
   homeButtonEventListener();
   hamburgerDropdown();
   hamburgerEventListeners();
 }
-
-render(state.Home);
-
 //hamburger button//
 function hamburgerEventListeners() {
   document.querySelectorAll(".dropdown-content a").forEach(link =>
@@ -26,7 +29,6 @@ function hamburgerEventListeners() {
     })
   );
 }
-
 //home button//
 function homeButtonEventListener() {
   document.querySelector("#home").addEventListener("click", event => {

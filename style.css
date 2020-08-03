@@ -26,7 +26,7 @@ h1, h2, a {
 
 }
 .hobbySketches > img {
-  height: 6vh;
+  height: 8vh;
   width: auto;
 }
 
@@ -73,13 +73,13 @@ h1, h2, a {
 /*Middle Container*/
 .welcome-container {
   height: 25vh;
-  width: 70vw;
+  width: 50vw;
   display: inline-block;
   background-color:#E48577;
   color: white;
   text-align: center;
   margin-top: 30vh;
-  margin-left: 15vw;
+  margin-left: 25vw;
   box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
 }
 
