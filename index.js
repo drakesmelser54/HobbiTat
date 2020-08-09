@@ -1,40 +1,82 @@
-/*Importing all modules */
-import { Nav, Main } from "./components";
+//-------------------------------------------Imports----------------------------------------------/
+import { Nav, Main, Footer } from "./components";
 import * as state from "./store";
+import Navigo from "navigo";
+import { capitalize } from "lodash";
 
-/*Render fxn */
+//---------------------------------------------router fxn---------------------------------------/
+const router = new Navigo(window.location.origin);
+
+router
+  .on({
+    "/": () => render(state.Home),
+    ":page": params => {
+      let routeEntered = params.page;
+      let formattedRoute = capitalize(routeEntered);
+      let pieceOfState = state[formattedRoute];
+      render(pieceOfState);
+    }
+  })
+  .resolve();
+//-------------------------------------------------Render fxn-------------------------------------/
 function render(st) {
   document.querySelector("#root").innerHTML = `
   ${Nav(state.Links)}
   ${Main(st)}
+  ${Footer()}
   `;
+
+  router.updatePageLinks();
   eventListenerBundler();
 }
 render(state.Home);
 
-//bundle event listeners for render fxn//
+//------------------------------------------------Event Listener Bundler-------------------------
 function eventListenerBundler() {
-  homeButtonEventListener();
   hamburgerDropdown();
-  hamburgerEventListeners();
+  homeLoginButtonEventListener();
+  homeSignupButtonEventListener();
+  alreadyEventListener();
+  dontHaveEventListener();
+  signupToProfileForm();
 }
-//hamburger button//
-function hamburgerEventListeners() {
-  document.querySelectorAll(".dropdown-content a").forEach(link =>
-    link.addEventListener("click", event => {
-      event.preventDefault();
-      let linkText = event.target.textContent;
-      let pieceOfState = state[linkText];
-      render(pieceOfState);
-    })
-  );
-}
-//home button//
-function homeButtonEventListener() {
-  document.querySelector("#home").addEventListener("click", event => {
+
+//-----------------------------------------------Event Listeners-----------------------------------
+//login and signup buttons on home page//
+function homeLoginButtonEventListener() {
+  document.querySelector("#login-button").addEventListener("click", event => {
     event.preventDefault();
-    render(state.Home);
+    render(state.Login);
   });
+}
+function homeSignupButtonEventListener() {
+  document.querySelector("#signup-button").addEventListener("click", event => {
+    event.preventDefault();
+    render(state.Signup);
+  });
+}
+//already have an acounnt?//
+function alreadyEventListener() {
+  document.querySelector("#already").addEventListener("click", event => {
+    event.preventDefault();
+    render(state.Login);
+  });
+}
+//don't have an account?//
+function dontHaveEventListener() {
+  document.querySelector("#dont-have").addEventListener("click", event => {
+    event.preventDefault();
+    render(state.Signup);
+  });
+}
+
+function signupToProfileForm() {
+  document
+    .querySelector("#signup-to-create")
+    .addEventListener("click", event => {
+      event.preventDefault();
+      render(state.ProfileForm);
+    });
 }
 
 /*Toggle between hiding and showing hamburger drop down when clicked*/

@@ -17,21 +17,21 @@ h1, h2, a {
 /*nav*/
 .nav-bar {
   width: 100%;
-  height: 10vh;
+  height: 7vh;
   background-color: #3d4452;
   display: inline-flex;
   justify-content: space-between;
   align-items: flex-end;
   box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
-
-}
+  position: fixed;
+  }
 .hobbySketches > img {
-  height: 8vh;
+  height: 6vh;
   width: auto;
 }
 
-/*nav buttons*/
-.nav-btns {
+       /*nav buttons*/
+.nav-btns{
   background-color: #3d4452;
   border: none;
   cursor: pointer;
@@ -41,7 +41,20 @@ h1, h2, a {
   background-color: #E48577;
 }
 
-/*container to position dropdown content*/
+/*footer*/
+.footer {
+  height: 20vh;
+  width: auto;
+  background-color: #3d4452;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+   /*container to position dropdown content*/
 .dropdown {
   display: inline-block;
   text-align: end;
@@ -70,37 +83,41 @@ h1, h2, a {
 .show {display: block;}
 
 /*Home Page*/
+.home-page-jumbotron {
+  background-image: url("https://raw.githubusercontent.com/drakesmelser54/HobbiTat/master/Images/oceanPhoto.png");
+  background-size: cover;
+  height: 110vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /*Middle Container*/
 .welcome-container {
-  height: 25vh;
-  width: 50vw;
-  display: inline-block;
+  height: 30vh;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
   background-color:#E48577;
   color: white;
-  text-align: center;
-  margin-top: 30vh;
-  margin-left: 25vw;
-  box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+  z-index: 9;
 }
 
-  /*login/signup buttons*/
-  /*home page button container*/
-.homepage-buttons {
-  display: flex;
-  justify-content: space-around;
-
-}
 /*homepage button styling*/
-#login-button {
+#login-button, a {
   font-family: 'Raleway', Helvetica, sans-serif;
   background-color: #046307;
   border: none;
+  text-decoration: none;
   color: white;
-  padding: 1vh 2vw;
+  padding: 16px 32px;
   text-decoration: none;
   margin: 0;
   cursor: pointer;
-  width: 30%;
+  width: 90%;
 }
 
 #signup-button {
@@ -108,33 +125,60 @@ h1, h2, a {
   background-color: black;
   border: none;
   color: white;
-  padding: 1vh 2vw;
+  padding: 16px 32px;
   text-decoration: none;
   margin: 0;
   cursor: pointer;
-  width: 30%;
+  width: 90%;
+}
+
+.home-scroll {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  text-align: center;
+}
+
+.home-scroll-containers > h2 {
+  margin: 0 5vw;
+  padding-bottom: 5vh;
+  border-bottom: 2px solid black;
+}
+
+#home-photos {
+  height: auto;
+  width: 40vw;
+  margin-top: 15vh;
+
+  box-shadow: 0 8px 6px -6px black;
+}
+.home-scroll-containers {
+  height: auto;
+  width: 80vw;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#final-home-header {
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+  padding-bottom: 5vh;
+  border-bottom: 2px solid black;
 }
 
 /*Login and Signup Pages*/
 .login-signup-containers {
   height: 50vh;
-  width: 70vw;
+  width: 20vw;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
   background-color:#E48577;
-  box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
+  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
   color: white;
-  margin-top: 20vh;
-  margin-left: 15vw;
-}
-
-/*Login and Signup Forms*/
-.login-signup-containers > form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 /*Form-inputs*/
@@ -304,10 +348,10 @@ textarea, select {
 
 /*viewing HobbiTat Page*/
 .otherUserLowerProfileContainer {
-  display: inline-flex;
-  height: 35vh;
-  width: 100%;
-  font-size: smaller;
+    display: inline-flex;
+    height: 35vh;
+    width: 100%;
+    font-size: smaller;
 }
 .nextOrExchangeContainer {
   display: inline-flex;
@@ -319,8 +363,5 @@ textarea, select {
   width: 80%;
   align-items: center;
   justify-content: space-between;
+
 }
-
-
-
-/*Media quries*/
