@@ -22,23 +22,23 @@
       <div class="hobbySketches"></div>
       <button type="button" class="nav-btns"><i class="fa fa-home" style="font-size: 28px; color: white"></i></button>
     </nav>
-    <main>
-      <section class="profilePictureContainer">
-      </section>
-      <section class="lowerProfileContainer">
-        <div class="leftProfileContainer">
-          <h2>Name</h2>
-          <p>Lorem ipsum</p>
-          <h2>Location</h2>
-          <p>Aliquam ut ante</p>
-        </div>
-        <div class="rightProfileContainer">
-          <h2 class="profileHeaders">Hobbies</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <h2 class="profileHeaders">Projects</h2>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-      </section>
+    <section class="profile-form-container">
+      <form action="" method="post" id="profile-form" class="create-profile-forms">
+        <h2>Tell us about yourself!</h2>
+        <label for="name">What's your name?</label>
+        <input type="text" id="name" name="user" placeholder="Name">
+        <label for="userLocation">Where are you from?</label>
+        <input type="text" id="userLocation" name="user_location" placeholder="City/Town">
+       <label for="userPic">Add a profile picture</label>
+        <input id="userPic" name="user_pic" type="text" placeholder="Enter Your Photo URL">
+        <h2>Tell us about your hobbies!</h2>
+        <label for="userHobbies">What hobbies can you share?</label>
+        <textarea id="userHobbies" name="user_hobbies" max-length="100" placeholder="Hobbies go here!"></textarea>
+        <label for="userLinks">Share some links to your work!</label>
+        <textarea id="userLinks" name="user_links" max-length="100" placeholder="Links to your hobbies go here!"></textarea>
+        <input type="submit"/>
+      </form>
+    </section>
     </main>
 
     <script src="index.js"></script>
