@@ -12,10 +12,8 @@ router
   .on({
     "/": () => render(state.Home),
     ":page": params => {
-      let routeEntered = params.page;
-      let formattedRoute = capitalize(routeEntered);
-      let pieceOfState = state[formattedRoute];
-      render(pieceOfState);
+      let page = capitalize(params.page);
+      render(state[page]);
     }
   })
   .resolve();
@@ -41,6 +39,8 @@ function eventListenerBundler(st) {
   listenForSignup(st);
   listenForLogin(st);
 }
+
+//-------------------------------------Event Listeners-------------------------------------------//
 
 //----------------------------------Nav Bar Fxns-------------------------------------------------
 //Toggle between hiding and showing hamburger drop down when clicked//
@@ -92,6 +92,7 @@ function listenForSignup(st) {
           userLinks
         );
         render(state.Profile);
+        router.navigate("/Profile");
       });
     });
   }
@@ -141,7 +142,10 @@ function listenForLogin(st) {
       let password = inputs[1];
       auth.signInWithEmailAndPassword(email, password).then(() => {
         console.log("user logged in");
-        getUserFromDb(email).then(() => render(state.Profile));
+        getUserFromDb(email).then(
+          () => render(state.Profile),
+          router.navigate("/Profile")
+        );
       });
     });
   }
@@ -188,6 +192,7 @@ function loginLogoutListener(user) {
         //update user in db//
         db.collection("users").get;
         render(state.Home);
+        router.navigate("/Home");
       });
       console.log(state.User);
     }
