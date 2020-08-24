@@ -6,6 +6,7 @@ export default links => `
       ${links
         .map(link => `<a href="/${link}" data-navigo>${link}</a>`)
         .join("")}
+        <a href="/Home" id="log-out">Log-out</a>
     </div>
   </div>
   <div class="hobby-sketches">

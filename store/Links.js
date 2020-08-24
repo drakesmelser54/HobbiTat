@@ -1,1 +1,1 @@
-export default ["Profile", "HobbiTat", "Home"];
+export default ["Profile", "HobbiTat", "Chat-Log"];

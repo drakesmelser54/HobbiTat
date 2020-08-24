@@ -55,21 +55,7 @@ a {
   background-color: #E48577;
 }
 
-/*footer*/
-.footer {
-  height: 20vh;
-  width: auto;
-  background-color: #3d4452;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-}
-
-   /*container to position dropdown content*/
+/*container to position dropdown content*/
 .dropdown {
   display: inline-block;
   text-align: end;
@@ -82,7 +68,7 @@ a {
   background-color: #d4d9d3;
   border-top: 3px solid black;
   width: 100%;
-  height: 15vh;
+  height: 18vh;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 10;
 }
@@ -96,6 +82,19 @@ a {
 }
 
 .show {display: block;}
+
+/*footer*/
+.footer {
+  height: 20vh;
+  width: auto;
+  background-color: #3d4452;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
 /*Home Page*/
 .home-page-jumbotron {
@@ -146,7 +145,7 @@ a {
   cursor: pointer;
   width: 90%;
 }
-
+/*below jumbotron scroll*/
 .home-scroll {
   display: flex;
   flex-flow: column wrap;
@@ -197,7 +196,7 @@ a {
 }
 
 /*Form-inputs*/
-input[type=email], select {
+input[type=email], input[type=password], select {
   padding: 1vh 1vw;
   margin: 8px 0;
   display: inline-block;
@@ -205,16 +204,7 @@ input[type=email], select {
   border-radius: 4px;
   box-sizing: border-box;
   font-family: 'Noto Serif', Georgia, serif;
-}
-
-input[type=password], select {
-  padding: 1vh 1vw;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-family: 'Noto Serif', Georgia, serif;
+  text-align: center;
 }
 
 input[type=submit], select {
@@ -224,9 +214,9 @@ input[type=submit], select {
   color: white;
   padding: 16px 32px;
   text-decoration: none;
-  margin: 4px 2px 4px 12px;
+  margin: 4px 12px;
   cursor: pointer;
-  width: 90%;
+  width: 200px;
 }
 
 input[type=file], select {
@@ -244,6 +234,7 @@ textarea, select {
   border-radius: 4px;
   box-sizing: border-box;
   font-family: 'Noto Serif', Georgia, serif;
+  text-align: center;
 }
 
 /*Form Containers*/
@@ -260,6 +251,7 @@ textarea, select {
 }
 .signup-form > input {
   margin: 5vh;
+  text-align: center;
 }
 
 .signup-form > textarea {
@@ -394,7 +386,7 @@ textarea, select {
     height: 30vh;
     width: 60vw;
   }
-  .login-signup-containers {
+  .login-container {
     height: 50vh;
     width: 60vw;
   }
