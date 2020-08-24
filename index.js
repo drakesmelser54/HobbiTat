@@ -35,7 +35,6 @@ render(state.Home);
 function eventListenerBundler(st) {
   hamburgerDropdown();
   loginLogoutListener(state.User);
-  authChangeListener();
   listenForSignup(st);
   listenForLogin(st);
 }
@@ -50,12 +49,6 @@ function hamburgerDropdown() {
     .addEventListener("click", function() {
       document.getElementById("hamburger-dropdown").classList.toggle("show");
     });
-}
-
-//-----------------------------------Auth Changes--------------------------------------------------
-function authChangeListener() {
-  //log user object from auth if user is logged in//
-  auth.onAuthStateChanged(user => (user ? console.log(user) : ""));
 }
 
 //-------------------------------------sign-up------------------------------------------------------
@@ -79,8 +72,6 @@ function listenForSignup(st) {
       //create user in firebase
       auth.createUserWithEmailAndPassword(email, password).then(response => {
         console.log("user registered");
-        console.log("response", response);
-        console.log("response.user", response.user);
         //add user to state and database
         addUserToStateAndDB(
           email,
@@ -228,3 +219,9 @@ function resetUserInState() {
   state.User.userLinks = "";
   state.User.loggedIn = false;
 }
+
+//----------------------------Debugging Functions--------------------------------------------------
+// function authChangeListener() {
+//log user object from auth if user is logged in//
+//   auth.onAuthStateChanged(user => (user ? console.log(user) : ""));
+// }
