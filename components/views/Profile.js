@@ -4,7 +4,7 @@ export default () => `
   <section class="lowerProfileContainer">
     <div class="leftProfileContainer">
       <h2>Name</h2>
-      <p>Lorem ipsum</p>
+      <h4 id="username">Lorem ipsum</h4>
       <h2>Location</h2>
       <p>Aliquam ut ante</p>
     </div>

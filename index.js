@@ -82,6 +82,7 @@ function listenForSignup(st) {
           hobbies,
           userLinks
         );
+        console.log(state.User);
         render(state.Profile);
         router.navigate("/Profile");
       });
@@ -133,15 +134,24 @@ function listenForLogin(st) {
       let password = inputs[1];
       auth.signInWithEmailAndPassword(email, password).then(() => {
         console.log("user logged in");
-        getUserFromDb(email).then(
-          () => render(state.Profile),
-          router.navigate("/Profile")
-        );
+        getUserFromDb(email)
+          .then(() => render(state.Profile), router.navigate("/Profile"))
+          .then(() => {
+            document.querySelector(
+              "#username"
+            ).innerText = `${state.User.name}`;
+          });
       });
     });
   }
 }
 
+//-----------populate profile fxn---------//
+// function populateName() {
+//   document.querySelector("#username").innerText = `${state.User.name}`;
+//      document.querySelector()
+// }
+//------------------------------------//
 function getUserFromDb(email) {
   return db
     .collection("users")
@@ -155,13 +165,13 @@ function getUserFromDb(email) {
             .update({ signedIn: true });
           console.log("user signed in db");
           let user = doc.data();
-          state.User.email = email;
           state.User.name = user.name;
           state.User.location = user.location;
           state.User.profilePicture = user.profilePicture;
           state.User.hobbies = user.hobbies;
           state.User.userLinks = user.userLinks;
           state.User.loggedIn = true;
+          // populateProfile(state.User.profilePicture)
           console.log(state.User);
         }
       })
@@ -220,6 +230,12 @@ function resetUserInState() {
   state.User.loggedIn = false;
 }
 
+//---------------------------Profile Page Functions---------------------------------------------//
+//-----add info from database to profile on login------//
+// function populateProfile() {
+//   document.querySelector(".profilePictureContainer").src =
+//     "${state.User.profilePicture}";
+// }
 //----------------------------Debugging Functions--------------------------------------------------
 // function authChangeListener() {
 //log user object from auth if user is logged in//

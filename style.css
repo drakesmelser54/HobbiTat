@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(to right, #e0eef0 0%,#78b6c0 100%);
+  background-color: #E48577;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -52,7 +52,7 @@ a {
 }
 
 .nav-btns:hover, .nav-btns:focus {
-  background-color: #E48577;
+  background-color: #f5f5f5;
 }
 
 /*container to position dropdown content*/
@@ -65,8 +65,7 @@ a {
   display: none;
   position: absolute;
   text-align: left;
-  background-color: #d4d9d3;
-  border-top: 3px solid black;
+  background-color: #3d4452;
   width: 100%;
   height: 18vh;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -75,8 +74,8 @@ a {
 
 .dropdown-content > a {
   text-decoration: none;
-  color: black;
-  border-bottom: 1px solid grey;
+  color: #f5f5f5;;
+  border-bottom: 1px solid silver;
   padding: 5px;
   display: block;
 }
@@ -94,13 +93,16 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin-top: 10vh;
 }
 
 /*Home Page*/
 .home-page-jumbotron {
-  background-image: url("https://raw.githubusercontent.com/drakesmelser54/HobbiTat/master/Images/oceanPhoto.png");
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)) ,
+    url("https://raw.githubusercontent.com/drakesmelser54/HobbiTat/master/Images/farmer-daughter.jpg");
   background-size: cover;
-  height: 110vh;
+  height: 130vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,40 +112,34 @@ a {
 .welcome-container {
   height: 30vh;
   width: 20vw;
+  margin-bottom: 9%;
   display: flex;
   flex-direction: column;
-  background-color:#E48577;
   color: white;
   justify-content: space-evenly;
   align-items: center;
-  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+  /* box-shadow: 0 3px 3px rgba(0,0,0,0.2); */
   z-index: 5;
+  font-size: large;
 }
 
 /*homepage button styling*/
-#login-button, a {
-  font-family: 'Raleway', Helvetica, sans-serif;
-  background-color: #046307;
-  border: none;
+#login-button {
+  font-family: "Raleway", Helvetica, sans-serif;
+  border: 1px solid white;
+  border-radius: 10px;
   text-decoration: none;
   color: white;
-  padding: 16px 32px;
-  text-decoration: none;
-  margin: 0;
+  padding: 10px 20px;
   cursor: pointer;
-  width: 90%;
 }
 
 #signup-button {
-  font-family: 'Raleway', Helvetica, sans-serif;
-  background-color: black;
-  border: none;
+  font-family: "Raleway", Helvetica, sans-serif;
   color: white;
-  padding: 16px 32px;
+  padding: 10px 20px;
   text-decoration: none;
-  margin: 0;
   cursor: pointer;
-  width: 90%;
 }
 /*below jumbotron scroll*/
 .home-scroll {
@@ -151,21 +147,9 @@ a {
   flex-flow: column wrap;
   align-items: center;
   text-align: center;
+  color: #f5f5f5;
 }
 
-.home-scroll-containers > h2 {
-  margin: 0 5vw;
-  padding-bottom: 5vh;
-  border-bottom: 2px solid black;
-}
-
-#home-photos {
-  height: auto;
-  width: 40vw;
-  margin-top: 15vh;
-
-  box-shadow: 0 8px 6px -6px black;
-}
 .home-scroll-containers {
   height: auto;
   width: 80vw;
@@ -174,25 +158,39 @@ a {
   align-items: center;
 }
 
-#final-home-header {
-  margin-top: 20vh;
-  margin-bottom: 20vh;
+.home-scroll-containers > h2 {
+  margin: 0 5vw;
   padding-bottom: 5vh;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid #f5f5f5;
+}
+.home-photos {
+  height: auto;
+  width: 40vw;
+  margin-top: 15vh;
+  box-shadow: 0 8px 6px -6px black;
 }
 
+#final-home-header {
+  border-bottom: 1px solid #f5f5f5;
+  width: 30vw;
+  margin-top: 10vh;
+  padding-bottom: 5vh;
+}
 /*Login and Signup Pages*/
 .login-container {
-  height: 50vh;
+  height: 35vh;
   width: 20vw;
+  margin-bottom: 8%;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  background-color:#E48577;
-  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
   color: white;
   text-align: center;
+}
+
+.login-container > a {
+  color: white;
 }
 
 /*Form-inputs*/
@@ -209,18 +207,15 @@ input[type=email], input[type=password], select {
 
 input[type=submit], select {
   font-family: 'Raleway', Helvetica, sans-serif;
-  background-color: #046307;
-  border: none;
+  border: 1px solid white;
+  border-radius: 10px;
+  background: transparent;
   color: white;
-  padding: 16px 32px;
+  padding: 10px 20px;
   text-decoration: none;
   margin: 4px 12px;
   cursor: pointer;
   width: 200px;
-}
-
-input[type=file], select {
-  font-family: 'Raleway', Helvetica, sans-serif;
 }
 
 /*Form-text areas*/
@@ -263,6 +258,12 @@ textarea, select {
   padding-bottom: 5vh;
   margin: 5vh 5vw;
 }
+
+.signup-form > a {
+  color: white;
+}
+
+
 
 /*ProfilePage*/
 .profilePictureContainer {
@@ -384,11 +385,13 @@ textarea, select {
   }
   .welcome-container {
     height: 30vh;
-    width: 60vw;
+    width: 30vw;
+    padding-bottom: 25%;
   }
   .login-container {
-    height: 50vh;
+    height: 40vh;
     width: 60vw;
+    padding-bottom: 25%;
   }
 
   .home-scroll-containers {
@@ -396,10 +399,17 @@ textarea, select {
     display: block;
   }
 
-  #home-photos {
+  .home-scroll-containers > h2 {
+    border: none;
+  }
+  .home-photos {
     height: 50vh;
     width: auto;
     margin: 5vh auto;
+  }
+
+  #final-home-header {
+    width: 40vw;
   }
 }
 
