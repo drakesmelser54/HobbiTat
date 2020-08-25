@@ -103,6 +103,7 @@ a {
     url("https://raw.githubusercontent.com/drakesmelser54/HobbiTat/master/Images/farmer-daughter.jpg");
   background-size: cover;
   height: 130vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -376,9 +377,9 @@ textarea, select {
 
 }
 
-
+/*media queries for iphone x*/
 /*media queries for iphone 6/7/8 plus*/
-@media (max-width: 800px) {
+@media (max-width: 815px) {
   .hobby-sketches > img {
     padding-left: 5px;
     padding-right: 5px;
@@ -410,6 +411,11 @@ textarea, select {
 
   #final-home-header {
     width: 40vw;
+  }
+
+  #final-home-photo {
+    width: 70vw;
+    height: auto;
   }
 }
 
