@@ -7,7 +7,7 @@ export default () => `
     <section class="lowerProfileContainer">
       <div class="leftProfileContainer">
         <h2 id="user-name">Name</h2>
-        <h2 id="user-location">Location</h2>
+        <h3 id="user-location">Location</h3>
       </div>
       <div class="rightProfileContainer">
         <h3>Hobbies</h3>

@@ -85,6 +85,7 @@ function listenForSignup(st) {
         console.log(state.User);
         render(state.Profile);
         router.navigate("/Profile");
+        populateProfile();
       });
     });
   }
