@@ -6,8 +6,14 @@ export default () => `
     </section>
     <section class="lowerProfileContainer">
       <div class="leftProfileContainer">
-        <h2 id="user-name">Name</h2>
-        <h3 id="user-location">Location</h3>
+        <div class="name-location-container">
+          <h2 id="user-name">Name</h2>
+          <h4 id="user-location">Location</h4>
+        </div>
+        <div class="edit-profile-container">
+          <a href=""><i class="fas fa-user-edit"></i></a>
+          <a href="/Home" id="log-out">Log-out</a>
+        </div>
       </div>
       <div class="rightProfileContainer">
         <h3>Hobbies</h3>
