@@ -137,20 +137,20 @@ function listenForLogin(st) {
         getUserFromDb(email)
           .then(() => render(state.Profile), router.navigate("/Profile"))
           .then(() => {
-            document.querySelector(
-              "#username"
-            ).innerText = `${state.User.name}`;
+            populateProfile();
           });
       });
     });
   }
 }
 
-//-----------populate profile fxn---------//
-// function populateName() {
-//   document.querySelector("#username").innerText = `${state.User.name}`;
-//      document.querySelector()
-// }
+function populateProfile() {
+  document.querySelector("#user-photo").src = `${state.User.profilePicture}`;
+  document.querySelector("#user-name").innerText = `${state.User.name}`;
+  document.querySelector("#user-location").innerText = `${state.User.location}`;
+  document.querySelector("#user-hobbies").innerText = `${state.User.hobbies}`;
+  document.querySelector("#user-links").href = `${state.User.userLinks}`;
+}
 //------------------------------------//
 function getUserFromDb(email) {
   return db

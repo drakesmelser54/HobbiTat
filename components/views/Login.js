@@ -3,7 +3,7 @@ export default () => `
   <section class="login-container">
     <h2>Login</h2>
     <form id="login-form">
-      <input type="email" id="login-username" placeholder="type username here">
+      <input type="email" id="login-username" placeholder="type email here">
       <input type="password" id="password" placeholder="type password here">
       <input type="submit" value="Login">
     </form>
