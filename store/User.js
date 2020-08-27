@@ -4,6 +4,10 @@ export default {
   location: "",
   profilePicture: "",
   hobbies: "",
-  userLinks: "",
+  instagram: "",
+  youtube: "",
+  pintrest: "",
+  facebook: "",
+  otherSite: "",
   loggedIn: false
 };

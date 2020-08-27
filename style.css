@@ -281,18 +281,23 @@ textarea, select {
   box-shadow: 0 10px 10px #3b3a3a;
 }
 .upperProfileContainer {
-  height: 40%;
+  height: 45%;
   width: 100%;
   background: linear-gradient(to right, #e0eef0 0%,#78b6c0 100%);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
   align-items: center;
+}
+
+.previous-next {
+  font-size: 6vh;
+  color: black;
 }
 
 #user-photo {
   background-size: cover;
-  height: 30vh;
+  height: 90%;
   width: auto;
   box-shadow: 0 5px 5px #3b3a3a;
 
@@ -300,7 +305,7 @@ textarea, select {
 
 .lowerProfileContainer {
   display: inline-flex;
-  height: 60%;
+  height: 55%;
   width: 100%;
   background-color: #e0eef0;
   color: black;
@@ -313,6 +318,41 @@ textarea, select {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.links {
+  font-size: 5vh;
+  width: 8vw;
+  text-align: center;
+  padding-left: 25%;
+
+}
+
+.fa-instagram-square {
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 30%,#d6249f 60%,#285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-right: 10%;
+}
+
+.fa-youtube {
+  color: #FF0000;
+}
+
+.fa-pinterest {
+  color: #c8232c;
+  padding-right: 10%;
+}
+
+.fa-facebook {
+  color: #3b5998
+}
+#blog-website {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  font-size: medium;
 }
 
 .name-location-container {
@@ -350,8 +390,7 @@ textarea, select {
   border-top: 1px solid #D3D3D3;
   padding: 5px 0;
 }
-
-/*chatRoomPage*/
+/* chatRoomPage
 .upperChatRoom {
   height: 75vh;
   width: 100%;

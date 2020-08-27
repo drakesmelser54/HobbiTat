@@ -40,7 +40,6 @@ function eventListenerBundler(st) {
 }
 
 //-------------------------------------Event Listeners-------------------------------------------//
-
 //----------------------------------Nav Bar Fxns-------------------------------------------------
 //Toggle between hiding and showing hamburger drop down when clicked//
 function hamburgerDropdown() {
@@ -68,7 +67,12 @@ function listenForSignup(st) {
       let location = inputs[3];
       let profilePicture = inputs[4];
       let hobbies = inputs[5];
-      let userLinks = inputs[6];
+      let instagram = inputs[6];
+      let youtube = inputs[7];
+      let pintrest = inputs[8];
+      let facebook = inputs[9];
+      let otherSite = inputs[10];
+
       //create user in firebase
       auth.createUserWithEmailAndPassword(email, password).then(response => {
         console.log("user registered");
@@ -80,7 +84,11 @@ function listenForSignup(st) {
           location,
           profilePicture,
           hobbies,
-          userLinks
+          instagram,
+          youtube,
+          pintrest,
+          facebook,
+          otherSite
         );
         console.log(state.User);
         render(state.Profile);
@@ -99,14 +107,22 @@ function addUserToStateAndDB(
   location,
   profilePicture,
   hobbies,
-  userLinks
+  instagram,
+  youtube,
+  pintrest,
+  facebook,
+  otherSite
 ) {
   state.User.email = email;
   state.User.name = name;
   state.User.location = location;
   state.User.profilePicture = profilePicture;
   state.User.hobbies = hobbies;
-  state.User.userLinks = userLinks;
+  state.User.instagram = instagram;
+  state.User.youtube = youtube;
+  state.User.pintrest = pintrest;
+  state.User.facebook = facebook;
+  state.User.otherSite = otherSite;
   state.User.loggedIn = true;
 
   db.collection("users").add({
@@ -117,7 +133,12 @@ function addUserToStateAndDB(
     location: location,
     profilePicture: profilePicture,
     hobbies: hobbies,
-    userLinks: userLinks
+    instagram: instagram,
+    youtube: youtube,
+    pintrest: pintrest,
+    facebook: facebook,
+    otherSite: otherSite,
+    loggedIn: true
   });
 }
 
@@ -150,7 +171,11 @@ function populateProfile() {
   document.querySelector("#user-name").innerText = `${state.User.name}`;
   document.querySelector("#user-location").innerText = `${state.User.location}`;
   document.querySelector("#user-hobbies").innerText = `${state.User.hobbies}`;
-  document.querySelector("#user-links").href = `${state.User.userLinks}`;
+  document.querySelector("#instagram").href = `${state.User.instagram}`;
+  document.querySelector("#youtube").href = `${state.User.youtube}`;
+  document.querySelector("#pintrest").href = `${state.User.pintrest}`;
+  document.querySelector("#facebook").href = `${state.User.instagram}`;
+  document.querySelector("#blog-website").href = `${state.User.otherSite}`;
 }
 //------------------------------------//
 function getUserFromDb(email) {
@@ -170,7 +195,11 @@ function getUserFromDb(email) {
           state.User.location = user.location;
           state.User.profilePicture = user.profilePicture;
           state.User.hobbies = user.hobbies;
-          state.User.userLinks = user.userLinks;
+          state.User.instagram = user.instagram;
+          state.User.youtube = user.youtube;
+          state.User.pintrest = user.pintrest;
+          state.User.facebook = user.facebook;
+          state.User.otherSite = user.otherSite;
           state.User.loggedIn = true;
           // populateProfile(state.User.profilePicture)
           console.log(state.User);
@@ -227,16 +256,43 @@ function resetUserInState() {
   state.User.location = "";
   state.User.profilePicture = "";
   state.User.hobbies = "";
-  state.User.userLinks = "";
+  state.User.instagram = "";
+  state.User.youtube = "";
+  state.User.pintrest = "";
+  state.User.facebook = "";
+  state.User.otherSite = "";
   state.User.loggedIn = false;
 }
 
-//---------------------------Profile Page Functions---------------------------------------------//
-//-----add info from database to profile on login------//
-// function populateProfile() {
-//   document.querySelector(".profilePictureContainer").src =
-//     "${state.User.profilePicture}";
-// }
+//---------------------------------
+function next(st) {
+  if (st.view === profile)
+  document.querySelector("#next").addEventListener("click", event => {
+    event.preventDefault();
+  });
+}
+function listenForLogin(st) {
+  if (st.view === "Login") {
+    document.querySelector("#login-form").addEventListener("submit", event => {
+      event.preventDefault();
+      //convert html elements to Array
+      let inputList = Array.from(event.target.elements);
+      //remove the login button so it's not included
+      inputList.pop();
+      const inputs = inputList.map(input => input.value);
+      let email = inputs[0];
+      let password = inputs[1];
+      auth.signInWithEmailAndPassword(email, password).then(() => {
+        console.log("user logged in");
+        getUserFromDb(email)
+          .then(() => render(state.Profile), router.navigate("/Profile"))
+          .then(() => {
+            populateProfile();
+          });
+      });
+    });
+  }
+}
 //----------------------------Debugging Functions--------------------------------------------------
 // function authChangeListener() {
 //log user object from auth if user is logged in//

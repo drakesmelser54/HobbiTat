@@ -13,8 +13,13 @@ export default () => `
         <h2>Tell us about your hobbies!</h2>
         <label for="userHobbies">What hobbies can you share?</label>
         <textarea id="userHobbies" name="user_hobbies" max-length="100" placeholder="Hobbies go here!"></textarea>
-        <label for="userLinks">Share some links to your work!</label>
-        <textarea id="userLinks" name="user_links" max-length="100" placeholder="Links to your hobbies go here!"></textarea>
+        <h2>Share links that showcase your hobby!</h2>
+        <input type="text" id="instagram" name="instagram" placeholder="Instagram Profile Link">
+        <input type="text" id="youtube" name="youtube" placeholder="Youtube Profile Link">
+        <input type="text" id="pintrest" name="pintrest" placeholder="Pintrest Profile Link">
+        <input type="text" id="facebook" name="facebook" placeholder="Facebook Profile Link">
+        <input type="text" id="blog-website" name="blog-website" placeholder="Blog/Website Link">
+        <h2>Share pictures that showcase your hobby!</h2>
         <input type="submit" value="Signup">
         <a id="already" href="/Login" data-navigo>Already have an account?</a>
       </form>
