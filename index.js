@@ -72,6 +72,7 @@ function listenForSignup(st) {
       let pintrest = inputs[8];
       let facebook = inputs[9];
       let otherSite = inputs[10];
+      let userWants = inputs[11];
 
       //create user in firebase
       auth.createUserWithEmailAndPassword(email, password).then(response => {
@@ -88,7 +89,8 @@ function listenForSignup(st) {
           youtube,
           pintrest,
           facebook,
-          otherSite
+          otherSite,
+          userWants
         );
         console.log(state.User);
         render(state.Profile);
@@ -111,7 +113,8 @@ function addUserToStateAndDB(
   youtube,
   pintrest,
   facebook,
-  otherSite
+  otherSite,
+  userWants
 ) {
   state.User.email = email;
   state.User.name = name;
@@ -123,6 +126,7 @@ function addUserToStateAndDB(
   state.User.pintrest = pintrest;
   state.User.facebook = facebook;
   state.User.otherSite = otherSite;
+  state.User.userWants = userWants;
   state.User.loggedIn = true;
 
   db.collection("users").add({
@@ -138,6 +142,7 @@ function addUserToStateAndDB(
     pintrest: pintrest,
     facebook: facebook,
     otherSite: otherSite,
+    userWants: userWants,
     loggedIn: true
   });
 }
@@ -176,6 +181,7 @@ function populateProfile() {
   document.querySelector("#pintrest").href = `${state.User.pintrest}`;
   document.querySelector("#facebook").href = `${state.User.instagram}`;
   document.querySelector("#blog-website").href = `${state.User.otherSite}`;
+  document.querySelector("#user-wants").innerText = `${state.User.hobbies}`;
 }
 //------------------------------------//
 function getUserFromDb(email) {
@@ -200,6 +206,7 @@ function getUserFromDb(email) {
           state.User.pintrest = user.pintrest;
           state.User.facebook = user.facebook;
           state.User.otherSite = user.otherSite;
+          state.User.userWants = user.userWants;
           state.User.loggedIn = true;
           // populateProfile(state.User.profilePicture)
           console.log(state.User);
@@ -261,6 +268,7 @@ function resetUserInState() {
   state.User.pintrest = "";
   state.User.facebook = "";
   state.User.otherSite = "";
+  state.User.userWants = "";
   state.User.loggedIn = false;
 }
 

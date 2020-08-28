@@ -11,11 +11,11 @@ export default () => `
           <h4 id="user-location">Location</h4>
         </div>
         <div class="links">
-          <a href="" id="instagram"><i class="fab fa-instagram-square"></i></a>
-          <a href="" id="youtube"><i class="fab fa-youtube"></i></a>
-          <a href="" id="pintrest"><i class="fab fa-pinterest"></i></a>
-          <a href="" id="facebook"><i class="fab fa-facebook"></i></a>
-          <a href="" id="blog-website">Blog/Website</a>
+          <a href="" target="_blank" id="instagram"><i class="fab fa-instagram-square"></i></a>
+          <a href="" target="_blank" id="youtube"><i class="fab fa-youtube"></i></a>
+          <a href="" target="_blank" id="pintrest"><i class="fab fa-pinterest"></i></a>
+          <a href="" target="_blank" id="facebook"><i class="fab fa-facebook"></i></a>
+          <a href="" target="_blank" id="blog-website">Blog/Website</a>
         </div>
         <div class="edit-profile-container">
           <a href=""><i class="fas fa-user-edit"></i></a>
@@ -23,8 +23,17 @@ export default () => `
         </div>
       </div>
       <div class="rightProfileContainer">
-        <h3>Hobbies</h3>
-        <p id="user-hobbies">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="hobbies-containers">
+          <h3 class="right-profile-headers">Hobbies</h3>
+          <p id="user-hobbies">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="hobbies-containers">
+          <h3 class="right-profile-headers">What Hobbies Intrest Me</h3>
+          <p id="user-wants">Stuff</p>
+        </div>
+      </div>
+      <div class="view-container">
+        <a href="/HobbiTat" id="view-hobbitat">View HobbiTat</a>
       </div>
     </section>
   </div>

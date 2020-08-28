@@ -9,5 +9,6 @@ export default {
   pintrest: "",
   facebook: "",
   otherSite: "",
+  userWants: "",
   loggedIn: false
 };

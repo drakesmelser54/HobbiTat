@@ -19,7 +19,8 @@ export default () => `
         <input type="text" id="pintrest" name="pintrest" placeholder="Pintrest Profile Link">
         <input type="text" id="facebook" name="facebook" placeholder="Facebook Profile Link">
         <input type="text" id="blog-website" name="blog-website" placeholder="Blog/Website Link">
-        <h2>Share pictures that showcase your hobby!</h2>
+        <h2>What hobbies are you looking to learn/exchange?</h2>
+        <textarea id="userWants" name="user_wants" max-length="100" placeholder="Enter hobbies you want to learn/exchange here"></textarea>
         <input type="submit" value="Signup">
         <a id="already" href="/Login" data-navigo>Already have an account?</a>
       </form>

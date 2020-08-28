@@ -124,7 +124,6 @@ a {
 
 /*homepage button styling*/
 #login-button {
-  font-family: "Raleway", Helvetica, sans-serif;
   border: 1px solid white;
   border-radius: 10px;
   text-decoration: none;
@@ -290,11 +289,6 @@ textarea, select {
   align-items: center;
 }
 
-.previous-next {
-  font-size: 6vh;
-  color: black;
-}
-
 #user-photo {
   background-size: cover;
   height: 90%;
@@ -322,10 +316,9 @@ textarea, select {
 
 .links {
   font-size: 5vh;
-  width: 8vw;
+  width: 100%;
   text-align: center;
-  padding-left: 25%;
-
+  padding: 5px;
 }
 
 .fa-instagram-square {
@@ -333,7 +326,6 @@ textarea, select {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 30%,#d6249f 60%,#285AEB 90%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  padding-right: 10%;
 }
 
 .fa-youtube {
@@ -342,12 +334,12 @@ textarea, select {
 
 .fa-pinterest {
   color: #c8232c;
-  padding-right: 10%;
 }
 
 .fa-facebook {
   color: #3b5998
 }
+
 #blog-website {
   text-decoration: none;
   color: black;
@@ -381,14 +373,35 @@ textarea, select {
   color: black;
 }
 .rightProfileContainer {
-  width: 75%;
-  padding: 0vh 6vw 0vh 3vw;
+  width: 55%;
+  display: block;
 }
 
-.rightProfileContainer > h3 {
+.hobbies-containers {
+  text-align: center;
+}
+.right-profile-headers {
   border-bottom: 1px solid #D3D3D3;
-  border-top: 1px solid #D3D3D3;
   padding: 5px 0;
+}
+
+.view-container {
+  width: 20%;
+  border-left: 1px solid #D3D3D3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#view-hobbitat {
+  color: white;
+  border: 1px solid white;
+  background-color: Red;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 /* chatRoomPage
 .upperChatRoom {
@@ -512,8 +525,16 @@ textarea, select {
   .leftProfileContainer {
     width: 40%;
   }
+  .links {
+    font-size: 4vh;
+    display: block;
+    padding: 10px 10px 10px 0;
+  }
+
   .rightProfileContainer {
     width: 60%;
+    height: 60%;
+    padding: 10px;
   }
   .name-location-container {
     height: 10vh;
@@ -521,6 +542,13 @@ textarea, select {
   .edit-profile-container {
    height: 10%;
   }
-
+  .view-container {
+    width: 0%;
+  }
+  #view-hobbitat {
+    position: absolute;
+    top: 80%;
+    right: 13%;
+  }
 }
 
