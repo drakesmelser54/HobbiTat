@@ -10,16 +10,13 @@ const router = new Navigo(window.location.origin);
 
 router
   .on({
-    "/": () => render(state.Home),
-    ":page": params => {
-      let page = capitalize(params.page);
-      render(state[page]);
-    }
+    ":page": params => render(state[capitalize(params.page)]),
+    "/": () => render(state.Home)
   })
   .resolve();
 
 //------------------------------------Render fxn----------------------------------------------------
-function render(st) {
+function render(st = state.Home) {
   document.querySelector("#root").innerHTML = `
   ${Nav(state.Links)}
   ${Main(st)}
@@ -29,7 +26,6 @@ function render(st) {
   router.updatePageLinks();
   eventListenerBundler(st);
 }
-render(state.Home);
 
 //---------------------------------Event Listener Bundler-------------------------------------------
 function eventListenerBundler(st) {
@@ -37,9 +33,16 @@ function eventListenerBundler(st) {
   loginLogoutListener(state.User);
   listenForSignup(st);
   listenForLogin(st);
+  profileListener(st);
+  nextUserListener(st);
 }
 
 //-------------------------------------Event Listeners-------------------------------------------//
+function profileListener(st) {
+  if (st.view === "Profile") {
+    populateProfile();
+  }
+}
 //----------------------------------Nav Bar Fxns-------------------------------------------------
 //Toggle between hiding and showing hamburger drop down when clicked//
 function hamburgerDropdown() {
@@ -94,7 +97,6 @@ function listenForSignup(st) {
         );
         console.log(state.User);
         render(state.Profile);
-        router.navigate("/Profile");
         populateProfile();
       });
     });
@@ -179,9 +181,9 @@ function populateProfile() {
   document.querySelector("#instagram").href = `${state.User.instagram}`;
   document.querySelector("#youtube").href = `${state.User.youtube}`;
   document.querySelector("#pintrest").href = `${state.User.pintrest}`;
-  document.querySelector("#facebook").href = `${state.User.instagram}`;
+  document.querySelector("#facebook").href = `${state.User.facebook}`;
   document.querySelector("#blog-website").href = `${state.User.otherSite}`;
-  document.querySelector("#user-wants").innerText = `${state.User.hobbies}`;
+  document.querySelector("#user-wants").innerText = `${state.User.userWants}`;
 }
 //------------------------------------//
 function getUserFromDb(email) {
@@ -197,6 +199,7 @@ function getUserFromDb(email) {
             .update({ signedIn: true });
           console.log("user signed in db");
           let user = doc.data();
+          state.User.email = user.email;
           state.User.name = user.name;
           state.User.location = user.location;
           state.User.profilePicture = user.profilePicture;
@@ -272,37 +275,85 @@ function resetUserInState() {
   state.User.loggedIn = false;
 }
 
-//---------------------------------
-function next(st) {
-  if (st.view === profile)
-  document.querySelector("#next").addEventListener("click", event => {
-    event.preventDefault();
-  });
-}
-function listenForLogin(st) {
-  if (st.view === "Login") {
-    document.querySelector("#login-form").addEventListener("submit", event => {
+//---------------------------------------------View other Users------------------------------//
+function nextUserListener(st) {
+  if (st.view === "Hobbitat") {
+    document.querySelector("#next").addEventListener("click", event => {
       event.preventDefault();
-      //convert html elements to Array
-      let inputList = Array.from(event.target.elements);
-      //remove the login button so it's not included
-      inputList.pop();
-      const inputs = inputList.map(input => input.value);
-      let email = inputs[0];
-      let password = inputs[1];
-      auth.signInWithEmailAndPassword(email, password).then(() => {
-        console.log("user logged in");
-        getUserFromDb(email)
-          .then(() => render(state.Profile), router.navigate("/Profile"))
-          .then(() => {
-            populateProfile();
-          });
-      });
+
+      let userArray = [];
+      db.collection("users")
+        .get()
+        .then(snapshot => {
+          snapshot.docs.forEach(doc => userArray.push(doc.data()));
+          console.log(userArray);
+        })
+        .then(() => {
+          let randomUser =
+            userArray[Math.floor(Math.random() * userArray.length)];
+
+          if (randomUser.email === state.User.email) {
+            nextUserListener(st);
+          } else {
+            render(state.Hobbitat);
+
+            document.querySelector(
+              "#user-photo"
+            ).src = `${randomUser.profilePicture}`;
+            document.querySelector(
+              "#user-name"
+            ).innerText = `${randomUser.name}`;
+            document.querySelector(
+              "#user-location"
+            ).innerText = `${randomUser.location}`;
+            document.querySelector(
+              "#user-hobbies"
+            ).innerText = `${randomUser.hobbies}`;
+            document.querySelector(
+              "#instagram"
+            ).href = `${randomUser.instagram}`;
+            document.querySelector("#youtube").href = `${randomUser.youtube}`;
+            document.querySelector("#pintrest").href = `${randomUser.pintrest}`;
+            document.querySelector(
+              "#facebook"
+            ).href = `${randomUser.instagram}`;
+            document.querySelector(
+              "#blog-website"
+            ).href = `${randomUser.otherSite}`;
+          }
+        });
     });
   }
 }
-//----------------------------Debugging Functions--------------------------------------------------
-// function authChangeListener() {
-//log user object from auth if user is logged in//
-//   auth.onAuthStateChanged(user => (user ? console.log(user) : ""));
+
+// function getUserFromDb(email) {
+//   return db
+//     .collection("users")
+//     .get()
+//     .then(snapshot =>
+//       snapshot.docs.forEach(doc => {
+//         if (email === doc.data().email) {
+//           let id = doc.id;
+//           db.collection("users")
+//             .doc(id)
+//             .update({ signedIn: true });
+//           console.log("user signed in db");
+//           let user = doc.data();
+//           state.User.email = user.email;
+//           state.User.name = user.name;
+//           state.User.location = user.location;
+//           state.User.profilePicture = user.profilePicture;
+//           state.User.hobbies = user.hobbies;
+//           state.User.instagram = user.instagram;
+//           state.User.youtube = user.youtube;
+//           state.User.pintrest = user.pintrest;
+//           state.User.facebook = user.facebook;
+//           state.User.otherSite = user.otherSite;
+//           state.User.userWants = user.userWants;
+//           state.User.loggedIn = true;
+//           // populateProfile(state.User.profilePicture)
+//           console.log(state.User);
+//         }
+//       })
+//     );
 // }

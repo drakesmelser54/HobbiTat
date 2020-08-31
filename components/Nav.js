@@ -1,12 +1,12 @@
-export default links => `
+export default () => `
 <nav class="nav-bar">
   <div class="dropdown">
     <button type="button" id="hamburger-btn" class="nav-btns"><i class="fa fa-bars"></i></button>
     <div id="hamburger-dropdown" class="dropdown-content">
-      ${links
-        .map(link => `<a href="/${link}" data-navigo>${link}</a>`)
-        .join("")}
-        <a href="/Home" id="log-out">Log-out</a>
+      <a href="Profile" id="Profile" data-navigo>Profile</a>
+      <a href="Hobbitat" id="Hobbitat" data-navigo>View HobbiTat</a>
+      <a href="" id="ChatLog" data-navigo>Chat-Log</a>
+      <a href="" id="log-out" data-navigo>Log-out</a>
     </div>
   </div>
   <div class="hobby-sketches">

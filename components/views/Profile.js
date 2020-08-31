@@ -33,7 +33,7 @@ export default () => `
         </div>
       </div>
       <div class="view-container">
-        <a href="/HobbiTat" id="view-hobbitat">View HobbiTat</a>
+        <a href="/Hobbitat" id="view-hobbitat" data-navigo>View HobbiTat</a>
       </div>
     </section>
   </div>

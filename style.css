@@ -65,7 +65,7 @@ a {
   display: none;
   position: absolute;
   text-align: left;
-  background-color: #3d4452;
+  background-color: #3d445299;
   width: 100%;
   height: 18vh;
   box-shadow: 0 10px 10px #3b3a3a;
@@ -403,6 +403,16 @@ textarea, select {
   padding: 10px 20px;
   cursor: pointer;
 }
+
+/* #controls {
+  height: 20vh;
+  width: 100%;
+  background-color: #3d445299;
+  position: absolute;
+  z-index: 9;
+  margin: 0;
+  padding: 0;
+} */
 /* chatRoomPage
 .upperChatRoom {
   height: 75vh;

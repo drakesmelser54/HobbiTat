@@ -1,3 +1,3 @@
 export default {
-  view: "HobbiTat"
+  view: "Hobbitat"
 };
