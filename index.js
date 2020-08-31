@@ -35,6 +35,7 @@ function eventListenerBundler(st) {
   listenForLogin(st);
   profileListener(st);
   nextUserListener(st);
+  editProfile(st);
 }
 
 //-------------------------------------Event Listeners-------------------------------------------//
@@ -286,74 +287,190 @@ function nextUserListener(st) {
         .get()
         .then(snapshot => {
           snapshot.docs.forEach(doc => userArray.push(doc.data()));
-          console.log(userArray);
         })
         .then(() => {
           let randomUser =
             userArray[Math.floor(Math.random() * userArray.length)];
+
+          addRandomUserToState(randomUser);
 
           if (randomUser.email === state.User.email) {
             nextUserListener(st);
           } else {
             render(state.Hobbitat);
 
+            //populate other user's profile card
             document.querySelector(
               "#user-photo"
-            ).src = `${randomUser.profilePicture}`;
+            ).src = `${state.Community.profilePicture}`;
             document.querySelector(
               "#user-name"
-            ).innerText = `${randomUser.name}`;
+            ).innerText = `${state.Community.name}`;
             document.querySelector(
               "#user-location"
-            ).innerText = `${randomUser.location}`;
+            ).innerText = `${state.Community.location}`;
             document.querySelector(
               "#user-hobbies"
-            ).innerText = `${randomUser.hobbies}`;
+            ).innerText = `${state.Community.hobbies}`;
             document.querySelector(
               "#instagram"
-            ).href = `${randomUser.instagram}`;
-            document.querySelector("#youtube").href = `${randomUser.youtube}`;
-            document.querySelector("#pintrest").href = `${randomUser.pintrest}`;
+            ).href = `${state.Community.instagram}`;
+            document.querySelector(
+              "#youtube"
+            ).href = `${state.Community.youtube}`;
+            document.querySelector(
+              "#pintrest"
+            ).href = `${state.Community.pintrest}`;
             document.querySelector(
               "#facebook"
-            ).href = `${randomUser.instagram}`;
+            ).href = `${state.Community.facebook}`;
             document.querySelector(
               "#blog-website"
-            ).href = `${randomUser.otherSite}`;
+            ).href = `${state.Community.otherSite}`;
+            document.querySelector(
+              "#user-wants"
+            ).innerText = `${state.Community.userWants}`;
           }
         });
     });
   }
 }
 
-// function getUserFromDb(email) {
-//   return db
-//     .collection("users")
-//     .get()
-//     .then(snapshot =>
-//       snapshot.docs.forEach(doc => {
-//         if (email === doc.data().email) {
-//           let id = doc.id;
-//           db.collection("users")
-//             .doc(id)
-//             .update({ signedIn: true });
-//           console.log("user signed in db");
-//           let user = doc.data();
-//           state.User.email = user.email;
-//           state.User.name = user.name;
-//           state.User.location = user.location;
-//           state.User.profilePicture = user.profilePicture;
-//           state.User.hobbies = user.hobbies;
-//           state.User.instagram = user.instagram;
-//           state.User.youtube = user.youtube;
-//           state.User.pintrest = user.pintrest;
-//           state.User.facebook = user.facebook;
-//           state.User.otherSite = user.otherSite;
-//           state.User.userWants = user.userWants;
-//           state.User.loggedIn = true;
-//           // populateProfile(state.User.profilePicture)
-//           console.log(state.User);
-//         }
-//       })
-//     );
-// }
+//addRandomUserToState
+function addRandomUserToState(randomUser) {
+  state.Community.email = randomUser.email;
+  state.Community.name = randomUser.name;
+  state.Community.location = randomUser.location;
+  state.Community.profilePicture = randomUser.profilePicture;
+  state.Community.hobbies = randomUser.hobbies;
+  state.Community.instagram = randomUser.instagram;
+  state.Community.youtube = randomUser.youtube;
+  state.Community.pintrest = randomUser.pintrest;
+  state.Community.facebook = randomUser.facebook;
+  state.Community.otherSite = randomUser.otherSite;
+  state.Community.userWants = randomUser.userWants;
+}
+
+//------------------------------------Edit Profile Page-------------------------------------
+function editProfile(st) {
+  if (st.view === "Edit") {
+    document.querySelector("#edit-form").addEventListener("submit", event => {
+      event.preventDefault();
+      //convert html elements to Array
+      let inputList = Array.from(event.target.elements);
+      //remove submit button so it's not included
+      inputList.pop();
+      const inputs = inputList.map(input => input.value);
+      let email = inputs[0];
+      let name = inputs[1];
+      let location = inputs[2];
+      let profilePicture = inputs[3];
+      let hobbies = inputs[4];
+      let instagram = inputs[5];
+      let youtube = inputs[6];
+      let pintrest = inputs[7];
+      let facebook = inputs[8];
+      let otherSite = inputs[9];
+      let userWants = inputs[10];
+
+      //editInStateAndDB
+      editInStateAndDB(
+        email,
+        name,
+        location,
+        profilePicture,
+        hobbies,
+        instagram,
+        youtube,
+        pintrest,
+        facebook,
+        otherSite,
+        userWants
+      );
+      render(state.Profile);
+      router.navigate("/Profile");
+      populateProfile();
+    });
+  }
+}
+
+//edit and update user profile
+function editInStateAndDB(
+  email,
+  name,
+  location,
+  profilePicture,
+  hobbies,
+  instagram,
+  youtube,
+  pintrest,
+  facebook,
+  otherSite,
+  userWants
+) {
+  state.User.email = email;
+  state.User.name = name;
+  state.User.location = location;
+  state.User.profilePicture = profilePicture;
+  state.User.hobbies = hobbies;
+  state.User.instagram = instagram;
+  state.User.youtube = youtube;
+  state.User.pintrest = pintrest;
+  state.User.facebook = facebook;
+  state.User.otherSite = otherSite;
+  state.User.userWants = userWants;
+
+  updateInDB(
+    email,
+    name,
+    location,
+    profilePicture,
+    hobbies,
+    instagram,
+    youtube,
+    pintrest,
+    facebook,
+    otherSite,
+    userWants
+  );
+}
+
+//update db with changes from profile edit
+function updateInDB(
+  email,
+  name,
+  location,
+  profilePicture,
+  hobbies,
+  instagram,
+  youtube,
+  pintrest,
+  facebook,
+  otherSite,
+  userWants
+) {
+  return db
+    .collection("users")
+    .get()
+    .then(snapshot =>
+      snapshot.docs.forEach(doc => {
+        if (state.Community.email === doc.data().email) {
+          let id = doc.id;
+          db.collection("users")
+            .doc(id)
+            .update({
+              name: name,
+              location: location,
+              profilePicture: profilePicture,
+              hobbies: hobbies,
+              instagram: instagram,
+              youtube: youtube,
+              pintrest: pintrest,
+              facebook: facebook,
+              otherSite: otherSite,
+              userWants: userWants
+            });
+        }
+      })
+    );
+}

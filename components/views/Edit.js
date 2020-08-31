@@ -1,9 +1,8 @@
 export default () => `
-      <form id="signup-form" action="" method="POST" class="forms">
-        <h2>Signup</h2>
-        <input type="email" id="signup-email" name="signup-email" placeholder="Email" required />
-        <input type="password" id="signup-password" name="signup-password" placeholder="Password" required />
-        <h2>Tell us about yourself!</h2>
+      <form id="edit-form" action="" method="POST" class="forms">
+        <h2>Edit Profile</h2>
+        <label for="email">Enter your user-email</label>
+        <input type="email" id="signup-email" name="signup-email" placeholder="email" required />
         <label for="name">What's your name?</label>
         <input type="text" id="name" name="user" placeholder="Name">
         <label for="userLocation">Where are you from?</label>
@@ -21,7 +20,6 @@ export default () => `
         <input type="text" id="blog-website" name="blog-website" placeholder="Blog/Website Link">
         <h2>What hobbies are you looking to learn/exchange?</h2>
         <textarea id="userWants" name="user_wants" max-length="100" placeholder="Enter hobbies you want to learn/exchange here"></textarea>
-        <input type="submit" value="Signup">
-        <a id="already" href="/Login" data-navigo>Already have an account?</a>
+        <input type="submit" value="Edit">
       </form>
 `;

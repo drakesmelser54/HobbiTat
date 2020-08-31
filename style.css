@@ -232,7 +232,7 @@ textarea, select {
 }
 
 /*Form Containers*/
-.signup-form {
+.forms {
   font-family: 'Raleway', Helvetica, sans-serif;
   padding: 10vh;
   font-size: large;
@@ -243,22 +243,22 @@ textarea, select {
   align-items: center;
   text-align: center;
 }
-.signup-form > input {
+.forms > input {
   margin: 5vh;
   text-align: center;
 }
 
-.signup-form > textarea {
+.forms > textarea {
   margin: 5vh;
 }
 
-.signup-form > h2 {
+.forms > h2 {
   border-bottom: 1px white solid;
   padding-bottom: 5vh;
   margin: 5vh 5vw;
 }
 
-.signup-form > a {
+.forms > a {
   color: white;
 }
 

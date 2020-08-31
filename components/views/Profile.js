@@ -18,7 +18,7 @@ export default () => `
           <a href="" target="_blank" id="blog-website">Blog/Website</a>
         </div>
         <div class="edit-profile-container">
-          <a href=""><i class="fas fa-user-edit"></i></a>
+          <a href="/Edit" id="edit-profile"><i class="fas fa-user-edit"></i></a>
           <a href="/Home" id="log-out">Log-out</a>
         </div>
       </div>
