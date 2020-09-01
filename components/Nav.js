@@ -3,10 +3,11 @@ export default () => `
   <div class="dropdown">
     <button type="button" id="hamburger-btn" class="nav-btns"><i class="fa fa-bars"></i></button>
     <div id="hamburger-dropdown" class="dropdown-content">
-      <a href="Profile" id="Profile" data-navigo>Profile</a>
-      <a href="Hobbitat" id="Hobbitat" data-navigo>View HobbiTat</a>
-      <a href="" id="ChatLog" data-navigo>Chat-Log</a>
-      <a href="" id="log-out" data-navigo>Log-out</a>
+      <a href="Profile" id="Profile" data-navigo><i class="fas fa-user"></i>&nbsp&nbsp&nbsp Profile</a>
+      <a href="Hobbitat" id="Hobbitat" data-navigo><i class="fas fa-users"></i>&nbsp&nbsp&nbsp View HobbiTat</a>
+      <a href="" id="ChatLog" data-navigo><i class="fas fa-people-arrows"></i>&nbsp&nbsp&nbsp Chat-Log</a>
+      <a href=""><i class="fas fa-calendar-alt"></i>&nbsp&nbsp&nbsp Scheduled Exchanges</a>
+      <a href="" id="log-out" data-navigo><i class="fas fa-sign-out-alt"></i>&nbsp&nbsp&nbsp Log-out</a>
     </div>
   </div>
   <div class="hobby-sketches">

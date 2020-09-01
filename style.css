@@ -10,7 +10,7 @@ p, {
   font-family: 'Noto Serif', Georgia, serif;
 }
 
-h1, h2, h3, a {
+h1, h2, h3, h4, a {
   font-family: 'Raleway', Helvetica, sans-serif;
 }
 
@@ -65,9 +65,9 @@ a {
   display: none;
   position: absolute;
   text-align: left;
-  background-color: #3d445299;
+  background-color: #3d4452b7;
   width: 100%;
-  height: 18vh;
+  height: 21vh;
   box-shadow: 0 10px 10px #3b3a3a;
   z-index: 10;
 }
@@ -273,7 +273,7 @@ textarea, select {
 }
 .profile-card {
   display: block;
-  width: 70vw;
+  width: 80vw;
   height: 85vh;
   margin-top: 10vh;
   margin-bottom: 10vh;
@@ -282,50 +282,85 @@ textarea, select {
 .upperProfileContainer {
   height: 45%;
   width: 100%;
-  background: linear-gradient(to right, #e0eef0 0%,#78b6c0 100%);
+  background-color: #e0eef0;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: center;
 }
 
-#user-photo, #slide, #otherSlide {
+.upper-left {
+  border-right: 1px solid #40E0D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+
+.upper-right {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 60%;
+}
+#user-photo {
   background-size: cover;
-  height: 40%;
-  width: auto;
+  height: auto;
+  width: 50%;
   box-shadow: 0 5px 5px #3b3a3a;
 }
 
+#slide, #otherSlide {
+  background-size: cover;
+  height: auto;
+  width: 50%;
+  box-shadow: 0 5px 5px #3b3a3a;
+}
 
+#back, #forward, #otherBack, #otherForward {
+  font-size: 5vh;
+  text-decoration: none;
+  border: none;
+  background-color: #e0eef0
+}
 .lowerProfileContainer {
   display: inline-flex;
   height: 55%;
   width: 100%;
   background-color: #e0eef0;
   color: black;
-  border-top: 1px solid #D3D3D3;
+  border-top: 1px solid #40E0D0;
 }
 
 .leftProfileContainer {
   width: 25%;
-  border-right: 1px solid #D3D3D3;
+  border-right: 1px solid #40E0D0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-right: 3%;
 }
+/*hobbitat*/
+
 
 .links {
   font-size: 5vh;
-  width: 100%;
-  text-align: center;
-  padding: 5px;
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+
+#blog-website {
+  padding-top: 3vh;
+}
 .fa-instagram-square {
   background: #d6249f;
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 30%,#d6249f 60%,#285AEB 90%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-right: 20px;
 }
 
 .fa-youtube {
@@ -334,6 +369,7 @@ textarea, select {
 
 .fa-pinterest {
   color: #c8232c;
+  padding-right: 20px;
 }
 
 .fa-facebook {
@@ -348,23 +384,23 @@ textarea, select {
 }
 
 .name-location-container {
-  height: 15vh;
+  height: 30%;
   width: 100%;
   color: black;
   text-align: center;
-  border-bottom: 1px solid #D3D3D3;
+  border-bottom: 1px solid #40E0D0;
 }
 
 
 .edit-profile-container {
-  height: 5vh;
+  height: 15%;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: flex-end;
   padding-bottom: 10%;
-  border-top: 1px solid #D3D3D3;
+  border-top: 1px solid #40E0D0;
   font-size: large;
   color: black;
 }
@@ -372,36 +408,67 @@ textarea, select {
 .edit-profile-container > a {
   color: black;
 }
-.rightProfileContainer {
+.lower-middle-container {
   width: 55%;
   display: block;
 }
 
-.hobbies-containers {
+.hobby-container, .intrests-container {
   text-align: center;
 }
 .right-profile-headers {
-  border-bottom: 1px solid #D3D3D3;
+  border-bottom: 1px solid #40E0D0;
   padding: 5px 0;
 }
 
 .view-container {
   width: 20%;
-  border-left: 1px solid #D3D3D3;
+  border-left: 1px solid #40E0D0;
+  background-color: #2F5061;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: 3%;
+  color: white;
 }
 
-#view-hobbitat {
+#users-button {
+  padding-bottom: 5px;
+  font-size: 5vh;
+  text-decoration: none;
   color: white;
-  border: 1px solid white;
-  background-color: Red;
+}
+.hobbitat-button {
+  color: white;
+  background-color: #f5161a ;
   border-radius: 10px;
   text-decoration: none;
   padding: 10px 20px;
   cursor: pointer;
+}
+
+#hobbitat-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60%;
+  width: 50%;
+  border: 1px solid #40E0D0;
+  border-radius: 10%;
+}
+#next {
+  font-size: 8vh;
+  color: #f5161a;
+  padding-bottom: 10%;
+}
+
+#chat {
+  font-size: 7vh;
+  color: #08c346 ;
+  border-top: 1px solid #40E0D0;
+  padding-top: 10%;
 }
 
 /* #controls {
@@ -541,7 +608,7 @@ textarea, select {
     padding: 10px 10px 10px 0;
   }
 
-  .rightProfileContainer {
+  .lower-middle-container {
     width: 60%;
     height: 60%;
     padding: 10px;
@@ -560,5 +627,6 @@ textarea, select {
     top: 80%;
     right: 13%;
   }
+
 }
 
