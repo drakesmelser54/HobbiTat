@@ -304,15 +304,15 @@ textarea, select {
 }
 #user-photo {
   background-size: cover;
-  height: auto;
-  width: 50%;
+  max-height: 80%;
+  max-width: 80%;
   box-shadow: 0 5px 5px #3b3a3a;
 }
 
 #slide, #otherSlide {
   background-size: cover;
-  height: auto;
-  width: 50%;
+  max-height: 90%;
+  max-width: 70%;
   box-shadow: 0 5px 5px #3b3a3a;
 }
 
@@ -519,25 +519,7 @@ textarea, select {
   border-radius: 20px;
 }
 
-/*viewing HobbiTat Page*/
-.otherUserLowerProfileContainer {
-    display: inline-flex;
-    height: 35vh;
-    width: 100%;
-    font-size: smaller;
-}
-.nextOrExchangeContainer {
-  display: inline-flex;
-  position: absolute;
-  z-index: 9;
-  top: 90vh;
-  margin: 0;
-  padding-left: 8vw;
-  width: 80%;
-  align-items: center;
-  justify-content: space-between;
-
-}
+/*viewing HobbiTat Page*
 
 /*media queries for iphone x*/
 /*media queries for iphone 6/7/8 plus*/
@@ -591,9 +573,19 @@ textarea, select {
   .upperProfileContainer {
     height: 40%;
   }
+  .upper-left {
+    border: none;
+    justify-content: end;
+    align-items: flex-end;
+  }
   #user-photo {
-    height: 28vh;
-    margin-top: 3vh;
+    height: 30%;
+
+    width: auto;
+  }
+  #slide, #otherSlide {
+    height: 40%;
+    width: auto;
   }
   .lowerProfileContainer {
     height: 60%;
