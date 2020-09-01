@@ -12,6 +12,11 @@ export default () => `
         <h2>Tell us about your hobbies!</h2>
         <label for="userHobbies">What hobbies can you share?</label>
         <textarea id="userHobbies" name="user_hobbies" max-length="100" placeholder="Hobbies go here!"></textarea>
+        <h2>Share some pictures that showcase your hobby!</h2>
+        <input id="hobbyPicture1" name="hobbyPicture1" type="text" placeholder="Enter Your Photo URL">
+        <input id="hobbyPicture2" name="hobbyPicture2" type="text" placeholder="Enter Your Photo URL">
+        <input id="hobbyPicture3" name="hobbyPicture3" type="text" placeholder="Enter Your Photo URL">
+        <input id="hobbyPicture4" name="hobbyPicture4" type="text" placeholder="Enter Your Photo URL">
         <h2>Share links that showcase your hobby!</h2>
         <input type="text" id="instagram" name="instagram" placeholder="Instagram Profile Link">
         <input type="text" id="youtube" name="youtube" placeholder="Youtube Profile Link">

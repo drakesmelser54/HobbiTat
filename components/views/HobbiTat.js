@@ -2,7 +2,10 @@ export default () => `
 <div class="profile-card-aligner">
   <div class="profile-card">
     <section class="upperProfileContainer">
-      <img id="user-photo" src="https://raw.githubusercontent.com/drakesmelser54/HobbiTat/master/Images/oceanPhoto.png" alt="profile picture">
+    <img id="user-photo" src="" alt="profile picture">
+    <button id="otherBack"><i class="far fa-arrow-alt-circle-left"></i></button>
+    <img id="otherSlide" src="" alt="hobby pictures">
+    <button id="otherForward"><i class="far fa-arrow-alt-circle-right"></i></button>
     </section>
     <section class="lowerProfileContainer">
       <div class="leftProfileContainer">
@@ -11,11 +14,11 @@ export default () => `
           <h4 id="user-location">Location</h4>
         </div>
         <div class="links">
-          <a href="" target="_blank" id="other-instagram"><i class="fab fa-instagram-square"></i></a>
-          <a href="" target="_blank" id="youtube"><i class="fab fa-youtube"></i></a>
-          <a href="" target="_blank" id="pintrest"><i class="fab fa-pinterest"></i></a>
-          <a href="" target="_blank" id="facebook"><i class="fab fa-facebook"></i></a>
-          <a href="" target="_blank" id="blog-website">Blog/Website</a>
+          <a href="" target="_blank" id="instagram"><i class="fab fa-instagram-square"></i></a>
+          <a href=" " target="_blank" id="youtube"><i class="fab fa-youtube"></i></a>
+          <a href=" " target="_blank" id="pintrest"><i class="fab fa-pinterest"></i></a>
+          <a href=" " target="_blank" id="facebook"><i class="fab fa-facebook"></i></a>
+          <a href=" " target="_blank" id="blog-website">Blog/Website</a>
         </div>
       </div>
       <div class="rightProfileContainer">

@@ -2,7 +2,10 @@ export default () => `
 <div class="profile-card-aligner">
   <div class="profile-card">
     <section class="upperProfileContainer">
-      <img id="user-photo" src="https://raw.githubusercontent.com/drakesmelser54/HobbiTat/master/Images/oceanPhoto.png" alt="profile picture">
+    <img id="user-photo" src="" alt="profile picture">
+    <button id="back"><i class="far fa-arrow-alt-circle-left"></i></button>
+    <img id="slide" src="" alt="hobby pictures">
+    <button id="forward"><i class="far fa-arrow-alt-circle-right"></i></button>
     </section>
     <section class="lowerProfileContainer">
       <div class="leftProfileContainer">
@@ -33,7 +36,7 @@ export default () => `
         </div>
       </div>
       <div class="view-container">
-        <a href="/Hobbitat" id="view-hobbitat" data-navigo>View HobbiTat</a>
+        <a href="" id="view-hobbitat" data-navigo>View HobbiTat</a>
       </div>
     </section>
   </div>

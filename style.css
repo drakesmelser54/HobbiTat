@@ -289,13 +289,13 @@ textarea, select {
   align-items: center;
 }
 
-#user-photo {
+#user-photo, #slide, #otherSlide {
   background-size: cover;
-  height: 90%;
+  height: 40%;
   width: auto;
   box-shadow: 0 5px 5px #3b3a3a;
-
 }
+
 
 .lowerProfileContainer {
   display: inline-flex;

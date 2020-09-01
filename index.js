@@ -35,6 +35,8 @@ function eventListenerBundler(st) {
   listenForLogin(st);
   profileListener(st);
   nextUserListener(st);
+  hobbitatListener(st);
+  viewHobbitat(st);
   editProfile(st);
 }
 
@@ -42,6 +44,14 @@ function eventListenerBundler(st) {
 function profileListener(st) {
   if (st.view === "Profile") {
     populateProfile();
+    slideShow(st);
+  }
+}
+
+function hobbitatListener(st) {
+  if (st.view === "Hobbitat") {
+    populateHobbitat();
+    otherSlideShow(st);
   }
 }
 //----------------------------------Nav Bar Fxns-------------------------------------------------
@@ -71,12 +81,16 @@ function listenForSignup(st) {
       let location = inputs[3];
       let profilePicture = inputs[4];
       let hobbies = inputs[5];
-      let instagram = inputs[6];
-      let youtube = inputs[7];
-      let pintrest = inputs[8];
-      let facebook = inputs[9];
-      let otherSite = inputs[10];
-      let userWants = inputs[11];
+      let hobbyPicture1 = inputs[6];
+      let hobbyPicture2 = inputs[7];
+      let hobbyPicture3 = inputs[8];
+      let hobbyPicture4 = inputs[9];
+      let instagram = inputs[10];
+      let youtube = inputs[11];
+      let pintrest = inputs[12];
+      let facebook = inputs[13];
+      let otherSite = inputs[14];
+      let userWants = inputs[15];
 
       //create user in firebase
       auth.createUserWithEmailAndPassword(email, password).then(response => {
@@ -89,6 +103,10 @@ function listenForSignup(st) {
           location,
           profilePicture,
           hobbies,
+          hobbyPicture1,
+          hobbyPicture2,
+          hobbyPicture3,
+          hobbyPicture4,
           instagram,
           youtube,
           pintrest,
@@ -112,6 +130,10 @@ function addUserToStateAndDB(
   location,
   profilePicture,
   hobbies,
+  hobbyPicture1,
+  hobbyPicture2,
+  hobbyPicture3,
+  hobbyPicture4,
   instagram,
   youtube,
   pintrest,
@@ -124,6 +146,10 @@ function addUserToStateAndDB(
   state.User.location = location;
   state.User.profilePicture = profilePicture;
   state.User.hobbies = hobbies;
+  state.User.hobbyPicture1 = hobbyPicture1;
+  state.User.hobbyPicture2 = hobbyPicture2;
+  state.User.hobbyPicture3 = hobbyPicture3;
+  state.User.hobbyPicture4 = hobbyPicture4;
   state.User.instagram = instagram;
   state.User.youtube = youtube;
   state.User.pintrest = pintrest;
@@ -140,6 +166,10 @@ function addUserToStateAndDB(
     location: location,
     profilePicture: profilePicture,
     hobbies: hobbies,
+    hobbyPicture1: hobbyPicture1,
+    hobbyPicture2: hobbyPicture2,
+    hobbyPicture3: hobbyPicture3,
+    hobbyPicture4: hobbyPicture4,
     instagram: instagram,
     youtube: youtube,
     pintrest: pintrest,
@@ -179,6 +209,7 @@ function populateProfile() {
   document.querySelector("#user-name").innerText = `${state.User.name}`;
   document.querySelector("#user-location").innerText = `${state.User.location}`;
   document.querySelector("#user-hobbies").innerText = `${state.User.hobbies}`;
+  document.querySelector("#slide").src = `${state.User.hobbyPicture1}`;
   document.querySelector("#instagram").href = `${state.User.instagram}`;
   document.querySelector("#youtube").href = `${state.User.youtube}`;
   document.querySelector("#pintrest").href = `${state.User.pintrest}`;
@@ -205,6 +236,10 @@ function getUserFromDb(email) {
           state.User.location = user.location;
           state.User.profilePicture = user.profilePicture;
           state.User.hobbies = user.hobbies;
+          state.User.hobbyPicture1 = user.hobbyPicture1;
+          state.User.hobbyPicture2 = user.hobbyPicture2;
+          state.User.hobbyPicture3 = user.hobbyPicture3;
+          state.User.hobbyPicture4 = user.hobbyPicture4;
           state.User.instagram = user.instagram;
           state.User.youtube = user.youtube;
           state.User.pintrest = user.pintrest;
@@ -267,6 +302,10 @@ function resetUserInState() {
   state.User.location = "";
   state.User.profilePicture = "";
   state.User.hobbies = "";
+  state.User.hobbyPicture1 = "";
+  state.User.hobbyPicture2 = "";
+  state.User.hobbyPicture3 = "";
+  state.User.hobbyPicture4 = "";
   state.User.instagram = "";
   state.User.youtube = "";
   state.User.pintrest = "";
@@ -277,6 +316,39 @@ function resetUserInState() {
 }
 
 //---------------------------------------------View other Users------------------------------//
+//button from profile page//
+function viewHobbitat(st) {
+  if (st.view === "Profile") {
+    document
+      .querySelector("#view-hobbitat")
+      .addEventListener("click", event => {
+        event.preventDefault();
+
+        let userArray = [];
+        db.collection("users")
+          .get()
+          .then(snapshot => {
+            snapshot.docs.forEach(doc => userArray.push(doc.data()));
+          })
+          .then(() => {
+            let randomUser =
+              userArray[Math.floor(Math.random() * userArray.length)];
+
+            addRandomUserToState(randomUser);
+
+            if (randomUser.email === state.User.email) {
+              nextUserListener(st);
+            } else {
+              render(state.Hobbitat);
+              router.navigate("/Hobbitat");
+              populateHobbitat();
+            }
+          });
+      });
+  }
+}
+
+//button from hobbitat page//
 function nextUserListener(st) {
   if (st.view === "Hobbitat") {
     document.querySelector("#next").addEventListener("click", event => {
@@ -298,42 +370,36 @@ function nextUserListener(st) {
             nextUserListener(st);
           } else {
             render(state.Hobbitat);
-
-            //populate other user's profile card
-            document.querySelector(
-              "#user-photo"
-            ).src = `${state.Community.profilePicture}`;
-            document.querySelector(
-              "#user-name"
-            ).innerText = `${state.Community.name}`;
-            document.querySelector(
-              "#user-location"
-            ).innerText = `${state.Community.location}`;
-            document.querySelector(
-              "#user-hobbies"
-            ).innerText = `${state.Community.hobbies}`;
-            document.querySelector(
-              "#instagram"
-            ).href = `${state.Community.instagram}`;
-            document.querySelector(
-              "#youtube"
-            ).href = `${state.Community.youtube}`;
-            document.querySelector(
-              "#pintrest"
-            ).href = `${state.Community.pintrest}`;
-            document.querySelector(
-              "#facebook"
-            ).href = `${state.Community.facebook}`;
-            document.querySelector(
-              "#blog-website"
-            ).href = `${state.Community.otherSite}`;
-            document.querySelector(
-              "#user-wants"
-            ).innerText = `${state.Community.userWants}`;
+            populateHobbitat();
           }
         });
     });
   }
+}
+
+//popuates the profile card for other users, the values are stored in state at Community if there's any confusion
+function populateHobbitat() {
+  document.querySelector(
+    "#user-photo"
+  ).src = `${state.Community.profilePicture}`;
+  document.querySelector("#user-name").innerText = `${state.Community.name}`;
+  document.querySelector(
+    "#user-location"
+  ).innerText = `${state.Community.location}`;
+  document.querySelector(
+    "#user-hobbies"
+  ).innerText = `${state.Community.hobbies}`;
+  document.querySelector(
+    "#otherSlide"
+  ).src = `${state.Community.hobbyPicture1}`;
+  document.querySelector("#instagram").href = `${state.Community.instagram}`;
+  document.querySelector("#youtube").href = `${state.Community.youtube}`;
+  document.querySelector("#pintrest").href = `${state.Community.pintrest}`;
+  document.querySelector("#facebook").href = `${state.Community.facebook}`;
+  document.querySelector("#blog-website").href = `${state.Community.otherSite}`;
+  document.querySelector(
+    "#user-wants"
+  ).innerText = `${state.Community.userWants}`;
 }
 
 //addRandomUserToState
@@ -343,6 +409,10 @@ function addRandomUserToState(randomUser) {
   state.Community.location = randomUser.location;
   state.Community.profilePicture = randomUser.profilePicture;
   state.Community.hobbies = randomUser.hobbies;
+  state.Community.hobbyPicture1 = randomUser.hobbyPicture1;
+  state.Community.hobbyPicture2 = randomUser.hobbyPicture2;
+  state.Community.hobbyPicture3 = randomUser.hobbyPicture3;
+  state.Community.hobbyPicture4 = randomUser.hobbyPicture4;
   state.Community.instagram = randomUser.instagram;
   state.Community.youtube = randomUser.youtube;
   state.Community.pintrest = randomUser.pintrest;
@@ -366,12 +436,16 @@ function editProfile(st) {
       let location = inputs[2];
       let profilePicture = inputs[3];
       let hobbies = inputs[4];
-      let instagram = inputs[5];
-      let youtube = inputs[6];
-      let pintrest = inputs[7];
-      let facebook = inputs[8];
-      let otherSite = inputs[9];
-      let userWants = inputs[10];
+      let hobbyPicture1 = inputs[5];
+      let hobbyPicture2 = inputs[6];
+      let hobbyPicture3 = inputs[7];
+      let hobbyPicture4 = inputs[8];
+      let instagram = inputs[9];
+      let youtube = inputs[10];
+      let pintrest = inputs[11];
+      let facebook = inputs[12];
+      let otherSite = inputs[13];
+      let userWants = inputs[14];
 
       //editInStateAndDB
       editInStateAndDB(
@@ -380,6 +454,10 @@ function editProfile(st) {
         location,
         profilePicture,
         hobbies,
+        hobbyPicture1,
+        hobbyPicture2,
+        hobbyPicture3,
+        hobbyPicture4,
         instagram,
         youtube,
         pintrest,
@@ -401,6 +479,10 @@ function editInStateAndDB(
   location,
   profilePicture,
   hobbies,
+  hobbyPicture1,
+  hobbyPicture2,
+  hobbyPicture3,
+  hobbyPicture4,
   instagram,
   youtube,
   pintrest,
@@ -413,6 +495,10 @@ function editInStateAndDB(
   state.User.location = location;
   state.User.profilePicture = profilePicture;
   state.User.hobbies = hobbies;
+  state.User.hobbyPicture1 = hobbyPIcture1;
+  state.User.hobbyPicture2 = hobbyPIcture2;
+  state.User.hobbyPicture3 = hobbyPIcture3;
+  state.User.hobbyPicture4 = hobbyPIcture4;
   state.User.instagram = instagram;
   state.User.youtube = youtube;
   state.User.pintrest = pintrest;
@@ -426,6 +512,10 @@ function editInStateAndDB(
     location,
     profilePicture,
     hobbies,
+    hobbyPicture1,
+    hobbyPicture2,
+    hobbyPicture3,
+    hobbyPicture4,
     instagram,
     youtube,
     pintrest,
@@ -442,6 +532,10 @@ function updateInDB(
   location,
   profilePicture,
   hobbies,
+  hobbyPicture1,
+  hobbyPicture2,
+  hobbyPicture3,
+  hobbyPicture4,
   instagram,
   youtube,
   pintrest,
@@ -463,6 +557,10 @@ function updateInDB(
               location: location,
               profilePicture: profilePicture,
               hobbies: hobbies,
+              hobbyPicture1: hobbyPicture1,
+              hobbyPicture2: hobbyPicture2,
+              hobbyPicture3: hobbyPicture3,
+              hobbyPicture4: hobbyPicture4,
               instagram: instagram,
               youtube: youtube,
               pintrest: pintrest,
@@ -473,4 +571,102 @@ function updateInDB(
         }
       })
     );
+}
+
+//---------------------------------profile slideshow--------------------------------------------/
+//for profile page//
+let slideShowIndex = 0;
+
+function slideShow(st) {
+  let back = document.querySelector("#back");
+  let forward = document.querySelector("#forward");
+  if (back.addEventListener) {
+    back.addEventListener(
+      "click",
+      function() {
+        processClicks("back", st);
+      },
+      false
+    );
+    forward.addEventListener(
+      "click",
+      function() {
+        processClicks("forward", st);
+      },
+      false
+    );
+  } else if (back.attachEvent) {
+    back.attachEvent("onclick", function() {
+      processClicks("back", st);
+    });
+    forward.attachEvent("onclick", function() {
+      processClicks("forward", st);
+    });
+  }
+}
+
+function processClicks(action) {
+  let slideShowImages = [
+    `${state.User.hobbyPicture1}`,
+    `${state.User.hobbyPicture2}`,
+    `${state.User.hobbyPicture3}`,
+    `${state.User.hobbyPicture4}`
+  ];
+  if (action == "back") slideShowIndex -= 1;
+  else if (action == "forward") slideShowIndex++;
+  if (slideShowIndex < 0 || slideShowIndex > slideShowImages.length - 1)
+    slideShowIndex = 0;
+  console.log(slideShowIndex);
+  document.querySelector("#slide").src = `${slideShowImages[slideShowIndex]}`;
+}
+
+//for hobbitat page
+let otherSlideShowIndex = 0;
+
+function otherSlideShow(st) {
+  let back = document.querySelector("#otherBack");
+  let forward = document.querySelector("#otherForward");
+  if (back.addEventListener) {
+    back.addEventListener(
+      "click",
+      function() {
+        otherProcessClicks("back", st);
+      },
+      false
+    );
+    forward.addEventListener(
+      "click",
+      function() {
+        otherProcessClicks("forward", st);
+      },
+      false
+    );
+  } else if (back.attachEvent) {
+    back.attachEvent("onclick", function() {
+      otherProcessClicks("back", st);
+    });
+    forward.attachEvent("onclick", function() {
+      otherProcessClicks("forward", st);
+    });
+  }
+}
+
+function otherProcessClicks(action) {
+  let slideShowImages = [
+    `${state.Community.hobbyPicture1}`,
+    `${state.Community.hobbyPicture2}`,
+    `${state.Community.hobbyPicture3}`,
+    `${state.Community.hobbyPicture4}`
+  ];
+  if (action == "back") otherSlideShowIndex -= 1;
+  else if (action == "forward") otherSlideShowIndex++;
+  if (
+    otherSlideShowIndex < 0 ||
+    otherSlideShowIndex > slideShowImages.length - 1
+  )
+    otherSlideShowIndex = 0;
+  console.log(otherSlideShowIndex);
+  document.querySelector(
+    "#otherSlide"
+  ).src = `${slideShowImages[otherSlideShowIndex]}`;
 }
