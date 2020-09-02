@@ -26,10 +26,10 @@ This README contains the following information
 [Link](https://trello.com/b/tVQ7Afir/capstone) to personal Trello Board for this project.
 
 ## Installation:
-This SPA will be housed on Heroku initially and will be functional on computer web browsers and mobile devices. After the Savvy Coders Full Stack Bootcamp, _HobbiTat_ will continue to be updated and may eventually be registered under a domain and be functional on IOS.
+This SPA will be housed on [Netlify](https://hobbitat.netlify.app/) initially and will be functional on computer web browsers and mobile devices. After the Savvy Coders Full Stack Bootcamp, _HobbiTat_ will continue to be updated and may eventually be registered under a domain and be functional on IOS.
 
 ## Usage:
-After opening _HobbiTat_, users create profiles after inputting some information, including: location, hobbies and skills they possess, and photos and links to relevant work. After profiles are created, users may view profiles within their area in a slideshow, similar to the swiping process in dating apps like _Bumble_ and _Tinder_.
+After opening _HobbiTat_, users create profiles after inputting some information, including: location, hobbies and skills they possess, photos and links to showcase their hobby, as well what intrests they want to explore on the app. After profiles are created, users may view profiles within their area in a slideshow, similar to the swiping process in dating apps like _Bumble_ and _Tinder_.
 
 If the user wants to chat with another user whose skills spark interest, they may start a dialogue through chat functionality. If the chat leads to an agreed upon "Exchange", the two users may book dates in their calender for the "Exchange".
 
@@ -39,7 +39,7 @@ Instructions on how to contribute to this project will be shared as they become 
 
 
 ## Credits:
-Credit is given to my fantastic TA in this Cohort, Vanessa Kratohvil. As well as the countless other instructors who made the knowledge and creativity backing this project possible. In addition, special thanks goes out to my peers in the June 2020 cohort at Savvy Coders.
+Credit is given to my fantastic TA in this Cohort, Vanessa Kratohvil. As well as the countless other instructors and peers who made the knowledge and creativity backing this project possible, most notably: Martin Carriel, Johan Bester, Lauren Lazarro, Asma Charef, and Brandon Burch. In addition, special thanks to all of the June 2020 Cohort at Savvy Coders for making this 13 weeks fun and enjoyable. Environment plays a huge role in creativity!
 
 
 ### MIT License
