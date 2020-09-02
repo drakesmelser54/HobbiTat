@@ -314,6 +314,7 @@ textarea, select {
 
 .upper-left {
   border-right: 1px solid #40E0D0;
+  background-image: linear-gradient(to bottom right, #80f0f0, #80b8f0);
   display: flex;
   justify-content: center;
   align-items: center;
