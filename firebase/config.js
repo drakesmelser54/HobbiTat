@@ -7,6 +7,6 @@ export default {
   projectId: "hobbitat-6716f",
   storageBucket: "hobbitat-6716f.appspot.com",
   messagingSenderId: "173893445023",
-  appId: "1:173893445023:web:b49933ea995c1774b5c9aa",
+  appId: process.env.FIREBASE_ID,
   measurementId: "G-Z8HCNGYL4Q"
 };
