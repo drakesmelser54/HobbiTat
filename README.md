@@ -26,7 +26,7 @@ This README contains the following information
 [Link](https://trello.com/b/tVQ7Afir/capstone) to personal Trello Board for this project.
 
 ## Installation:
-This SPA will be housed on Netlify initially and will be functional on computer web browsers and mobile devices. After the Savvy Coders Full Stack Bootcamp, _HobbiTat_ will continue to be updated and may eventually be registered under a domain and be functional on IOS.
+This SPA will be housed on [Netlify](https://hobbitat.netlify.app/) initially and will be functional on computer web browsers and mobile devices. After the Savvy Coders Full Stack Bootcamp, _HobbiTat_ will continue to be updated and may eventually be registered under a domain and be functional on IOS.
 
 ## Usage:
 After opening _HobbiTat_, users create profiles after inputting some information, including: location, hobbies and skills they possess, photos and links to showcase their hobby, as well what intrests they want to explore on the app. After profiles are created, users may view profiles within their area in a slideshow, similar to the swiping process in dating apps like _Bumble_ and _Tinder_.
