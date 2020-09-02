@@ -91,6 +91,23 @@ a {
   text-align: center;
 }
 
+.footer > h4 {
+  border-bottom: 1px solid white;
+  padding-bottom: 20px;
+}
+.footer-links {
+  display: inline-flex;
+  font-size: 4vh;
+  width: 20vw;
+  justify-content: space-between;
+  text-decoration: none;
+  color: white;
+}
+
+.footer-links > a {
+  text-decoration: none;
+  color: white;
+}
 /*Home Page*/
 .home-page-jumbotron {
   background-image:
@@ -118,6 +135,10 @@ a {
   font-size: large;
 }
 
+#logo {
+  height: 15vh;
+  padding: 0;
+}
 /*homepage button styling*/
 #login-button {
   border: 1px solid white;
@@ -165,7 +186,6 @@ a {
 }
 
 #final-home-header {
-  border-bottom: 1px solid #f5f5f5;
   width: 30vw;
   margin-top: 10vh;
   margin-bottom: 10vh;
@@ -173,7 +193,7 @@ a {
 }
 /*Login and Signup Pages*/
 .login-container {
-  height: 35vh;
+  height: 40vh;
   width: 20vw;
   margin-bottom: 8%;
   display: flex;
@@ -417,7 +437,7 @@ textarea, select {
   display: block;
 }
 
-.hobby-container, .intrests-container {
+.hobby-container, .interests-container {
   text-align: center;
 }
 .right-profile-headers {

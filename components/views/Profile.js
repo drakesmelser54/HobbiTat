@@ -39,8 +39,8 @@ export default () => `
           <h3 class="right-profile-headers">Hobbies</h3>
           <p id="user-hobbies">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
-        <div class="intrests-container">
-          <h3 class="right-profile-headers">What Hobbies Intrest Me</h3>
+        <div class="interests-container">
+          <h3 class="right-profile-headers">What Hobbies Interest Me</h3>
           <p id="user-wants">Stuff</p>
         </div>
       </div>

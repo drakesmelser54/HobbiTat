@@ -541,7 +541,6 @@ function editInStateAndDB(
 
 //update db with changes from profile edit
 function updateInDB(
-  email,
   name,
   location,
   profilePicture,

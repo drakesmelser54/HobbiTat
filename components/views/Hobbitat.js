@@ -37,8 +37,8 @@ export default () => `
           <h3 class="right-profile-headers">Hobbies</h3>
           <p id="user-hobbies">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
-        <div class="intrests-container">
-          <h3 class="right-profile-headers">What Hobbies Intrest Me</h3>
+        <div class="interests-container">
+          <h3 class="right-profile-headers">What Hobbies Interest Me</h3>
           <p id="user-wants">Stuff</p>
         </div>
       </div>
@@ -46,7 +46,7 @@ export default () => `
         <h3>Next</h3>
         <div id="hobbitat-controls">
           <a href="" id="next"><i class="far fa-arrow-alt-circle-right"></i></a>
-          <a href"Chatlog" data-navigo id="chat"><i class="fas fa-people-arrows"></i></a>
+          <a href="Chatlog" data-navigo id="chat"><i class="fas fa-people-arrows"></i></a>
         </div>
         <h3>Exchange</h3>
       </div>
