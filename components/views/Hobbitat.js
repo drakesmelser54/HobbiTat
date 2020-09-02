@@ -46,7 +46,7 @@ export default () => `
         <h3>Next</h3>
         <div id="hobbitat-controls">
           <a href="" id="next"><i class="far fa-arrow-alt-circle-right"></i></a>
-          <a href"" id="chat"><i class="fas fa-people-arrows"></i></a>
+          <a href"Chatlog" data-navigo id="chat"><i class="fas fa-people-arrows"></i></a>
         </div>
         <h3>Exchange</h3>
       </div>

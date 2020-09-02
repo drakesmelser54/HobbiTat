@@ -30,7 +30,7 @@ export default () => `
         </div>
         <div class="edit-profile-container">
           <a href="/Edit" id="edit-profile"><i class="fas fa-user-edit"></i></a>
-          <a href=""><i class="fas fa-calendar-alt"></i></a>
+          <a href="Schedule" data-navigo><i class="fas fa-calendar-alt"></i></a>
           <a href="/Home" id="log-out"><i class="fas fa-sign-out-alt"></i></a>
         </div>
       </div>

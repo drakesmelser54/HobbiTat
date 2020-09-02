@@ -56,6 +56,7 @@ function hobbitatListener(st) {
     otherSlideShow(st);
   }
 }
+
 //----------------------------------Nav Bar Fxns-------------------------------------------------
 //Toggle between hiding and showing hamburger drop down when clicked//
 function hamburgerDropdown() {

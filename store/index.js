@@ -6,3 +6,5 @@ export { default as Edit } from "./Edit";
 export { default as Hobbitat } from "./Hobbitat";
 export { default as User } from "./User";
 export { default as Community } from "./Community";
+export { default as Chatlog } from "./Chatlog";
+export { default as Schedule } from "./Schedule";
