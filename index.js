@@ -2,6 +2,7 @@
 import { Nav, Main, Footer } from "./components";
 import * as state from "./store";
 import Navigo from "navigo";
+import "./env";
 import { capitalize } from "lodash";
 import { auth, db } from "./firebase";
 

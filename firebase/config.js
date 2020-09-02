@@ -1,5 +1,7 @@
+import "../env";
+
 export default {
-  apiKey: "AIzaSyALJ_pWHH_EbC7y2SNrTcyiPnNzWg_IczY",
+  apiKey: process.env.FIREBASE_API,
   authDomain: "hobbitat-6716f.firebaseapp.com",
   databaseURL: "https://hobbitat-6716f.firebaseio.com",
   projectId: "hobbitat-6716f",
