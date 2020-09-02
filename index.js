@@ -30,6 +30,8 @@ function render(st = state.Home) {
 //---------------------------------Event Listener Bundler-------------------------------------------
 function eventListenerBundler(st) {
   hamburgerDropdown();
+  checkLogInBeforeProfile();
+  checkLogInBeforeHobbitat();
   loginLogoutListener(state.User);
   listenForSignup(st);
   listenForLogin(st);
@@ -64,6 +66,22 @@ function hamburgerDropdown() {
     });
 }
 
+//check if user is logged in before allowing profile and hobbitat view access
+function checkLogInBeforeProfile() {
+  document.querySelector("#Profile").addEventListener("click", function() {
+    if (state.User.loggedIn == false) {
+      render(state.Login), router.navigate("/Login");
+    }
+  });
+}
+
+function checkLogInBeforeHobbitat() {
+  document.querySelector("#Hobbitat").addEventListener("click", function() {
+    if (state.User.loggedIn == false) {
+      render(state.Login), router.navigate("/Login");
+    }
+  });
+}
 //-------------------------------------sign-up------------------------------------------------------
 //----------signup-form-------------/
 function listenForSignup(st) {
@@ -94,7 +112,6 @@ function listenForSignup(st) {
 
       //create user in firebase
       auth.createUserWithEmailAndPassword(email, password).then(response => {
-        console.log("user registered");
         //add user to state and database
         addUserToStateAndDB(
           email,
@@ -114,7 +131,6 @@ function listenForSignup(st) {
           otherSite,
           userWants
         );
-        console.log(state.User);
         render(state.Profile);
         populateProfile();
       });
@@ -193,7 +209,6 @@ function listenForLogin(st) {
       let email = inputs[0];
       let password = inputs[1];
       auth.signInWithEmailAndPassword(email, password).then(() => {
-        console.log("user logged in");
         getUserFromDb(email)
           .then(() => render(state.Profile), router.navigate("/Profile"))
           .then(() => {
@@ -248,7 +263,6 @@ function getUserFromDb(email) {
           state.User.userWants = user.userWants;
           state.User.loggedIn = true;
           // populateProfile(state.User.profilePicture)
-          console.log(state.User);
         }
       })
     );
@@ -271,7 +285,6 @@ function loginLogoutListener(user) {
         render(state.Home);
         router.navigate("/Home");
       });
-      console.log(state.User);
     }
   });
 }
@@ -291,7 +304,6 @@ function logOutUserInDb(email) {
           }
         })
       );
-    console.log("user signed out in db");
   }
 }
 
@@ -495,10 +507,10 @@ function editInStateAndDB(
   state.User.location = location;
   state.User.profilePicture = profilePicture;
   state.User.hobbies = hobbies;
-  state.User.hobbyPicture1 = hobbyPIcture1;
-  state.User.hobbyPicture2 = hobbyPIcture2;
-  state.User.hobbyPicture3 = hobbyPIcture3;
-  state.User.hobbyPicture4 = hobbyPIcture4;
+  state.User.hobbyPicture1 = hobbyPicture1;
+  state.User.hobbyPicture2 = hobbyPicture2;
+  state.User.hobbyPicture3 = hobbyPicture3;
+  state.User.hobbyPicture4 = hobbyPicture4;
   state.User.instagram = instagram;
   state.User.youtube = youtube;
   state.User.pintrest = pintrest;
@@ -605,6 +617,7 @@ function slideShow(st) {
   }
 }
 
+//function to process clicks on profile page slideshow
 function processClicks(action) {
   let slideShowImages = [
     `${state.User.hobbyPicture1}`,
@@ -616,11 +629,10 @@ function processClicks(action) {
   else if (action == "forward") slideShowIndex++;
   if (slideShowIndex < 0 || slideShowIndex > slideShowImages.length - 1)
     slideShowIndex = 0;
-  console.log(slideShowIndex);
   document.querySelector("#slide").src = `${slideShowImages[slideShowIndex]}`;
 }
 
-//for hobbitat page
+//------------------------for hobbitat page
 let otherSlideShowIndex = 0;
 
 function otherSlideShow(st) {
@@ -651,6 +663,7 @@ function otherSlideShow(st) {
   }
 }
 
+//function to process clicks on hobbitat page slideshow
 function otherProcessClicks(action) {
   let slideShowImages = [
     `${state.Community.hobbyPicture1}`,

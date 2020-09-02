@@ -6,11 +6,7 @@ body {
 }
 
 /*Fonts*/
-p, {
-  font-family: 'Noto Serif', Georgia, serif;
-}
-
-h1, h2, h3, h4, a {
+h1, h2, h3, h4, p, a {
   font-family: 'Raleway', Helvetica, sans-serif;
 }
 
@@ -193,7 +189,7 @@ a {
 }
 
 /*Form-inputs*/
-input[type=email], input[type=password], select {
+input, input[type=email], input[type=password], input[type=text] select {
   padding: 1vh 1vw;
   margin: 8px 0;
   display: inline-block;
@@ -227,7 +223,7 @@ textarea, select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  font-family: 'Noto Serif', Georgia, serif;
+  font-family: 'Raleway', Helvetica, sans-serif;
   text-align: center;
 }
 
@@ -246,10 +242,19 @@ textarea, select {
 .forms > input {
   margin: 5vh;
   text-align: center;
+  padding: 1vh 1vw;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: 'Raleway', Helvetica, sans-serif;
+  text-align: center;
 }
 
 .forms > textarea {
   margin: 5vh;
+  width: 30vw;
+  height: 20vh;
 }
 
 .forms > h2 {
@@ -261,8 +266,6 @@ textarea, select {
 .forms > a {
   color: white;
 }
-
-
 
 /*ProfilePage*/
 .profile-card-aligner {
