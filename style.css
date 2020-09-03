@@ -614,20 +614,21 @@ textarea, select {
   .profile-card-aligner {
     height: 100vh;
     width: 100vw;
-
+    margin: 0;
   }
  .profile-card {
-  height: 100vh;
-  width: 100vw;
+  height: 100v%;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .upperProfileContainer {
   height: 30%;
-  padding-top: 5vh;
 }
 
 .lowerProfileContainer {
-  height: 65%;
+  height: 70%;
 }
 
 .upper-left {
@@ -642,17 +643,17 @@ textarea, select {
 }
 
 #back, #otherBack {
-  font-size: 4vh;
+  font-size: 3vh;
   position: absolute;
-  top: 30%;
-  right: 37%;
+  top: 29%;
+  right: 35%;
 }
 
 #forward, #otherForward {
-  font-size: 4vh;
+  font-size: 3vh;
   position: absolute;
-  top: 30%;
-  right: 18%;
+  top: 29%;
+  right: 15%;
 }
 #slide, #otherSlide {
   max-height: 60%;
@@ -664,7 +665,7 @@ textarea, select {
 }
 
 .name-location-container {
-  height: 20%;
+  height: 25%;
 }
 
 #blog-website {
@@ -685,9 +686,9 @@ textarea, select {
 
 .view-container {
     width: 63%;
-    height: 15vh;
+    height: 10vh;
     position: absolute;
-    top: 85%;
+    top: 82%;
     right: 0%;
 }
 
@@ -716,7 +717,7 @@ textarea, select {
   justify-content: space-evenly;
   align-items: center;
   width: 70%;
-  height: 45%;
+  height: 60%;
 }
 
 #next {
@@ -733,12 +734,12 @@ textarea, select {
 
 #hobbitat-next-header {
   margin-bottom: 0;
-  color: #2f5061;
+  color: #2f506100;
 }
 
 #hobbitat-exchange-header {
   margin-top: 0;
-  color: #2f5061;
+  color: #2f506100;
 }
 
 .patience {
