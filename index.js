@@ -246,7 +246,6 @@ function getUserFromDb(email) {
           db.collection("users")
             .doc(id)
             .update({ signedIn: true });
-          console.log("user signed in db");
           let user = doc.data();
           state.User.email = user.email;
           state.User.name = user.name;
@@ -279,7 +278,6 @@ function loginLogoutListener(user) {
       event.preventDefault();
       //log-out fxn//
       auth.signOut().then(() => {
-        console.log("user logged out");
         logOutUserInDb(user.email);
         resetUserInState();
         //update user in db//
@@ -679,7 +677,6 @@ function otherProcessClicks(action) {
     otherSlideShowIndex > slideShowImages.length - 1
   )
     otherSlideShowIndex = 0;
-  console.log(otherSlideShowIndex);
   document.querySelector(
     "#otherSlide"
   ).src = `${slideShowImages[otherSlideShowIndex]}`;
