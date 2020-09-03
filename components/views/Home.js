@@ -2,8 +2,8 @@ export default () => `
 <section class="home-page-jumbotron">
   <div class="welcome-container">
     <h1>HobbiTat</h1>
-      <a id="login-button" href="/Login" data-navigo>Login</a>
-      <a id="signup-button" href="/Signup" data-navigo>Signup</a>
+    <a id="login-button" href="/Login" data-navigo>Login</a>
+    <a id="signup-button" href="/Signup" data-navigo>Signup</a>
   </div>
 </section>
 <section class="home-scroll">

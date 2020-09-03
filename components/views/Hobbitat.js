@@ -14,7 +14,7 @@ export default () => `
     <section class="lowerProfileContainer">
       <div class="leftProfileContainer">
         <div class="name-location-container">
-          <h2 id="user-name">Name</h2>
+          <h3 id="user-name">Name</h3>
           <h4 id="user-location">Location</h4>
         </div>
         <div class="links">
@@ -43,12 +43,12 @@ export default () => `
         </div>
       </div>
       <div class="view-container">
-        <h3>Next</h3>
+        <h3 id="hobbitat-next-header">Next</h3>
         <div id="hobbitat-controls">
           <a href="" id="next"><i class="far fa-arrow-alt-circle-right"></i></a>
           <a href="Chatlog" data-navigo id="chat"><i class="fas fa-people-arrows"></i></a>
         </div>
-        <h3>Exchange</h3>
+        <h3 id="hobbitat-exchange-header">Exchange</h3>
       </div>
     </section>
   </div>

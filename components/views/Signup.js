@@ -21,7 +21,7 @@ export default () => `
         <h2>Share links that showcase your hobby!</h2>
         <input type="text" id="instagram" name="instagram" placeholder="Instagram Profile Link">
         <input type="text" id="youtube" name="youtube" placeholder="Youtube Profile Link">
-        <input type="text" id="pintrest" name="pintrest" placeholder="Pintrest Profile Link">
+        <input type="text" id="pintrest" name="pintrest" placeholder="Pinterest Profile Link">
         <input type="text" id="facebook" name="facebook" placeholder="Facebook Profile Link">
         <input type="text" id="blog-website" name="blog-website" placeholder="Blog/Website Link">
         <h2>What hobbies are you looking to learn/exchange?</h2>
