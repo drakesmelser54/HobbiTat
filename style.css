@@ -152,6 +152,16 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+
+#back-to-top {
+  border: 1px solid white;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-bottom: 5vh;
+}
 /*below jumbotron scroll*/
 .home-scroll {
   display: flex;
