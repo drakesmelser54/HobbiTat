@@ -8,3 +8,4 @@ export { default as User } from "./User";
 export { default as Community } from "./Community";
 export { default as Chatlog } from "./Chatlog";
 export { default as Schedule } from "./Schedule";
+export { default as Contact } from "./Contact";

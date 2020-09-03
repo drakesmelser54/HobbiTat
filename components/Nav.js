@@ -7,6 +7,7 @@ export default () => `
       <a href="Hobbitat" id="Hobbitat" data-navigo><i class="fas fa-users"></i>&nbsp&nbsp&nbsp View HobbiTat</a>
       <a href="Chatlog" id="ChatLog" data-navigo><i class="fas fa-people-arrows"></i>&nbsp&nbsp&nbsp Chat-Log</a>
       <a href="Schedule"><i class="fas fa-calendar-alt"></i>&nbsp&nbsp&nbsp Scheduled Exchanges</a>
+      <a href="Contact" data-navigo><i class="fas fa-phone"></i>&nbsp&nbsp&nbsp Contact Us</a>
       <a href="" id="log-out" data-navigo><i class="fas fa-sign-out-alt"></i>&nbsp&nbsp&nbsp Log-out</a>
     </div>
   </div>
