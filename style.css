@@ -260,6 +260,7 @@ input[type="email"]::placeholder, input[type="password"]::placeholder, input[typ
   font-family: 'Raleway', Helvetica, sans-serif;
 }
 
+
 .contact-form > textarea::placeholder {
   color: white;
 }
